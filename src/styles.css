@@ -1,1 +1,30 @@
-/* You can add global styles to this file, and also import other style files */
+.navbar {
+    background-color: lightgray;
+}
+
+.nav_links_div {
+    text-align: center;
+}
+
+.nav_title {
+    color: rgb(4, 84, 204);
+    text-decoration: none;
+    font-size: xx-large;
+    font-weight: 600;
+}
+
+.nav_title:hover {
+    text-decoration: none;
+}
+
+.nav_button {
+    color: black;
+    margin-left: 1em;
+    text-decoration: none;
+    font-size: larger;
+}
+
+.nav_button:hover {
+    color: gray;
+    text-decoration: none;
+}
