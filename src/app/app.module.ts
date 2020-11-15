@@ -12,9 +12,10 @@ import { ProfessionalSignupComponent } from './professional-signup/professional-
 import { EmployerSignupComponent } from './employer-signup/employer-signup.component';
 import { ShiftsAndGigsComponent } from './shifts-and-gigs/shifts-and-gigs.component';
 import { MentorMatchingComponent } from './mentor-matching/mentor-matching.component';
+import { BrowseProfessionalsComponent } from './browse-professionals/browse-professionals.component';
 
 @NgModule({
-  declarations: [										
+  declarations: [												
     AppComponent,
       MainSignupComponent,
       DashboardComponent,
@@ -23,7 +24,8 @@ import { MentorMatchingComponent } from './mentor-matching/mentor-matching.compo
       ProfessionalSignupComponent,
       EmployerSignupComponent,
       ShiftsAndGigsComponent,
-      MentorMatchingComponent
+      MentorMatchingComponent,
+      BrowseProfessionalsComponent
    ],
   imports: [
     BrowserModule,
@@ -36,6 +38,7 @@ import { MentorMatchingComponent } from './mentor-matching/mentor-matching.compo
       {path: 'employer-signup', component: EmployerSignupComponent},
       {path: 'shifts-and-gigs', component: ShiftsAndGigsComponent},
       {path: 'mentor-matching', component: MentorMatchingComponent},
+      {path: 'browse-professionals', component: BrowseProfessionalsComponent},
 
     ]),
   ],
