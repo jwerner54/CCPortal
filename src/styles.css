@@ -12,6 +12,12 @@
     text-decoration: none;
     font-size: xx-large;
     font-weight: 600;
+    font-family: Arial,Helvetica,sans-serif;
+}
+
+.page-title {
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 58px;
 }
 
 .nav_title:hover {
@@ -31,7 +37,7 @@
     text-decoration: none;
 }
 
-.dashboard-div {
+.page-div {
     margin: 70px 110px 0 110px !important;
     text-align: center;
 }
