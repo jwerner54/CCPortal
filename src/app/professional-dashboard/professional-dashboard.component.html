@@ -1,16 +1,28 @@
-<div class="row page-div">
-  <div class="col-md-4 dashboard-button-div">
-    <a routerLink="/shifts-and-gigs">
-      <button class="dashboard-button">
-        <p>Shifts and Gigs</p>
-      </button>
-    </a>
+<div class="basic-page-div fadeInDown">
+  <div class="row fadeIn first">
+    <div class="col-9">
+      <h1 class="basic-page-title" style="float: right; margin-right: 90px;">Professional Dashboard</h1>
+    </div>
+    <div class="col-3">
+      <a href="/account">
+        <button style="margin-top: 40px;" type="button" class="btn btn-primary">Account</button>
+      </a>
+    </div>
   </div>
-  <div class="col-md-4 dashboard-button-div">
-    <button class="dashboard-button">Button 2</button>
-  </div>
-  <div class="col-md-4 dashboard-button-div">
-    <button class="dashboard-button">Button 3</button>
-  </div>
+  <div class="row fadeIn second" style="margin-top: 60px;">
+    <div class="col-md-4 button-div">
+      <a routerLink="/shifts-and-gigs">
+        <button class="basic-button dashboard-button">
+          Shifts and Gigs
+        </button>
+      </a>
+    </div>
+    <div class="col-md-4 button-div">
+      <button class="basic-button dashboard-button">Community</button>
+    </div>
+    <div class="col-md-4 button-div">
+      <button class="basic-button dashboard-button">Mentor Matching</button>
+    </div>
 
+  </div>
 </div>

@@ -15,9 +15,10 @@ import { MentorMatchingComponent } from './mentor-matching/mentor-matching.compo
 import { BrowseProfessionalsComponent } from './browse-professionals/browse-professionals.component';
 import { CommunityComponent } from './community/community.component';
 import { LoginComponent } from './login/login.component';
+import { AccountComponent } from './account/account.component';
 
 @NgModule({
-  declarations: [															
+  declarations: [																
     AppComponent,
       MainSignupComponent,
       DashboardComponent,
@@ -29,7 +30,8 @@ import { LoginComponent } from './login/login.component';
       MentorMatchingComponent,
       BrowseProfessionalsComponent,
       CommunityComponent,
-      LoginComponent
+      LoginComponent,
+      AccountComponent
    ],
   imports: [
     BrowserModule,
@@ -45,6 +47,7 @@ import { LoginComponent } from './login/login.component';
       {path: 'browse-professionals', component: BrowseProfessionalsComponent},
       {path: 'community', component: CommunityComponent},
       {path: 'login', component: LoginComponent},
+      {path: 'account', component: AccountComponent},
 
     ]),
   ],
