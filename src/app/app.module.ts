@@ -14,9 +14,10 @@ import { ShiftsAndGigsComponent } from './shifts-and-gigs/shifts-and-gigs.compon
 import { MentorMatchingComponent } from './mentor-matching/mentor-matching.component';
 import { BrowseProfessionalsComponent } from './browse-professionals/browse-professionals.component';
 import { CommunityComponent } from './community/community.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
-  declarations: [													
+  declarations: [															
     AppComponent,
       MainSignupComponent,
       DashboardComponent,
@@ -27,7 +28,8 @@ import { CommunityComponent } from './community/community.component';
       ShiftsAndGigsComponent,
       MentorMatchingComponent,
       BrowseProfessionalsComponent,
-      CommunityComponent
+      CommunityComponent,
+      LoginComponent
    ],
   imports: [
     BrowserModule,
@@ -42,6 +44,7 @@ import { CommunityComponent } from './community/community.component';
       {path: 'mentor-matching', component: MentorMatchingComponent},
       {path: 'browse-professionals', component: BrowseProfessionalsComponent},
       {path: 'community', component: CommunityComponent},
+      {path: 'login', component: LoginComponent},
 
     ]),
   ],

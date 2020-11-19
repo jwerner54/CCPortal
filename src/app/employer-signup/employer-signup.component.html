@@ -1,3 +1,76 @@
-<p>
-  employer-signup works!
-</p>
+<div class="basic-page-div fadeInDown">
+  <h1 class="basic-page-title fadeIn first">Employer Signup</h1>
+
+  <form class="form-group row fadeIn second" style="margin-top: 40px;">
+    <div class="col-md-2"></div>
+    <!-- Left div -->
+    <div class="col-md-4">
+      <div class="form-group">
+        <label for="firstname" style="float: left;">First Name</label>
+        <input type="text" class="form-control" id="firstname" placeholder="First">
+      </div>
+      <div class="form-group">
+        <label for="exampleFormControlInput1" style="float: left;">Email address</label>
+        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+      </div>
+      <div class="form-group">
+        <label for="position" style="float: left;">Position</label>
+        <input type="text" class="form-control" id="position" placeholder="Position">
+      </div>
+      <div style="float: left; text-align: left;">
+        <label>Company Size</label>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+          <label class="form-check-label" for="exampleRadios1">
+            1-20
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+          <label class="form-check-label" for="exampleRadios2">
+            21-50
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option3">
+          <label class="form-check-label" for="exampleRadios3">
+            51-100
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios4" value="option4">
+          <label class="form-check-label" for="exampleRadios4">
+            101-500
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios5" value="option5">
+          <label class="form-check-label" for="exampleRadios5">
+            500+
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right div -->
+    <div class="col-md-4">
+      <div class="form-group">
+        <label for="lastname" style="float: left;">Last Name</label>
+        <input type="text" class="form-control" id="lastname" placeholder="Last">
+      </div>
+      <div class="form-group">
+        <label for="company" style="float: left;">Company Name</label>
+        <input type="text" class="form-control" id="company" placeholder="Company">
+      </div>
+      <div class="form-group">
+        <label for="phone" style="float: left;">Phone Number</label>
+        <input type="text" class="form-control" id="phone" placeholder="Phone">
+      </div>
+    </div>
+    <div class="col-md-2"></div>
+    <!-- Bottom div -->
+    <div class="col-md-12" style="text-align: center; margin-top: 50px;">
+      <button type="button" [routerLink]="['/employer-dashboard']" class="btn btn-primary">Submit</button>
+    </div>
+  </form>
+</div>

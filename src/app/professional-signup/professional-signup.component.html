@@ -1,3 +1,53 @@
-<p>
-  professional-signup works!
-</p>
+<div class="basic-page-div fadeInDown">
+  <h1 class="basic-page-title fadeIn first">Professional Signup</h1>
+
+  <form class="form-group row" style="margin-top: 40px;">
+    <div class="col-md-2"></div>
+    <!-- Left div -->
+    <div class="col-md-4">
+      <div class="form-group fadeIn first">
+        <label for="firstname" style="float: left;">First Name</label>
+        <input type="text" class="form-control" id="firstname" placeholder="First">
+      </div>
+      <div class="form-group fadeIn second">
+        <label for="exampleFormControlInput1" style="float: left;">Email address</label>
+        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+      </div>
+      <div class="form-group fadeIn third" style="width: 20%;">
+        <label for="resume" style="float: left;">Resume</label>
+        <input type="file" class="form-control-file" id="resume">
+      </div>
+    </div>
+
+    <!-- Right div -->
+    <div class="col-md-4">
+      <div class="form-group fadeIn first">
+        <label for="lastname" style="float: left;">Last Name</label>
+        <input type="text" class="form-control" id="lastname" placeholder="Last">
+      </div>
+      <div class="form-group fadeIn second">
+        <label for="pronouns" style="float: left;">My Pronouns are: (This is voluntary)</label>
+        <select class="form-control" id="pronouns">
+          <option>Prefer not to say</option>
+          <option>She/Her</option>
+          <option>He/His</option>
+          <option>They/Their</option>
+        </select>
+      </div>
+      <div class="form-group fadeIn third">
+        <label for="linkedin" style="float: left;">LinkedIn</label>
+        <input type="url" class="form-control" id="linkedin" placeholder="URL">
+      </div>
+    </div>
+    <div class="col-md-2"></div>
+    <div class="col-md-12 fadeIn third" style="text-align: center; margin-top: 50px;">
+      <button type="button" [routerLink]="['/professional-dashboard']" class="btn btn-primary">Submit</button>
+    </div>
+  </form>
+</div>
+
+<script>
+  function signup() {
+    setTimeout(function(){ alert("Hello"); }, 3000);
+  }
+</script>

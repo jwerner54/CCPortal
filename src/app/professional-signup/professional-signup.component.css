@@ -1,0 +1,12 @@
+.btn-primary {
+    margin-left: 3px;
+    width: 120px;
+}
+
+.form-group {
+    color: rgb(24, 24, 24);
+}
+
+.form-control-file {
+    cursor: pointer;
+}
