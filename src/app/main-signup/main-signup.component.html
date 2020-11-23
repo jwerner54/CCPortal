@@ -1,19 +1,27 @@
-<div style="text-align: center; height: 100%;">
-    <h1 class="page-title" style="margin-top: 30px;">How can we help you?</h1>
-    <div class="row page-div" style="text-align: center;">
-        <div class="col-md-6" style="height: 200px;">
+<div class="basic-page-div signup-div fadeInDown">
+    <h1 class="basic-page-title fadeIn first">How can we help you?</h1>
+    <div class="row fadeIn first" style="margin-top: 90px;">
+        <div class="col-md-6" style="padding: 0 60px 0 340px;">
             <a routerLink="/professional-signup">
-                <button class="dashboard-button signup-button">
-                    <p>Find a Job</p>
+                <button class="basic-button signup-button">
+                    <img class="button-logo" src="assets/job_search_2.png" />
+                    <p class="basic-text">Find a Job</p>
                 </button>
             </a>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-6" style="padding: 0 340px 0 60px;">
             <a routerLink="/employer-signup">
-                <button class="dashboard-button signup-button">
-                    <p>Find Professionals</p>
+                <button class="basic-button signup-button">
+                    <img class="button-logo" style="opacity: 0.8;" src="assets/Recruiting Icon BW.png" />
+                    <p class="basic-text">Find Professionals</p>
                 </button>
             </a>
         </div>
     </div>
+    <div class="fadeIn second" style="font-size: 18px; margin-top: 100px; float: left; text-align: left; margin-left: -180px;">
+        <p>Already have an account?
+            <a class="signin-link" style="cursor: pointer;" routerLink="/login">Sign in</a>
+        </p>
+    </div>
+
 </div>
