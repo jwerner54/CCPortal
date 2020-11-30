@@ -16,9 +16,10 @@ import { BrowseProfessionalsComponent } from './browse-professionals/browse-prof
 import { CommunityComponent } from './community/community.component';
 import { LoginComponent } from './login/login.component';
 import { AccountComponent } from './account/account.component';
+import { AboutUsComponent } from './about-us/about-us.component';
 
 @NgModule({
-  declarations: [																
+  declarations: [																							
     AppComponent,
       MainSignupComponent,
       DashboardComponent,
@@ -31,7 +32,8 @@ import { AccountComponent } from './account/account.component';
       BrowseProfessionalsComponent,
       CommunityComponent,
       LoginComponent,
-      AccountComponent
+      AccountComponent,
+      AboutUsComponent,
    ],
   imports: [
     BrowserModule,
@@ -48,6 +50,7 @@ import { AccountComponent } from './account/account.component';
       {path: 'community', component: CommunityComponent},
       {path: 'login', component: LoginComponent},
       {path: 'account', component: AccountComponent},
+      {path: 'about-us', component: AboutUsComponent},
 
     ]),
   ],

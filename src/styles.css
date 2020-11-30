@@ -168,4 +168,7 @@ Purple: rgb(23, 18, 85)
 Gray: rgb(200, 208, 224)
 
 Text Color: rgb(24, 24, 24)
+
+To deploy:
+firebase deploy --only hosting:colorful-connection
 */
