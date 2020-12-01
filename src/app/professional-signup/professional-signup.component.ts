@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../auth/auth.service';
 
 @Component({
   selector: 'app-professional-signup',
@@ -7,7 +8,33 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProfessionalSignupComponent implements OnInit {
 
-  constructor() { }
+  user = {
+    fname: '',
+    lname: '',
+    email: '',
+    pronouns: '',
+    password: '',
+    type: 'professional'
+  }
+
+  constructor(private authService: AuthService) { }
+
+  createUser() {
+    var errors = false;
+    this.authService.createUser(this.user.email, this.user.password, this.user.type, this.user.fname, this.user.lname, this.user.pronouns)
+      .catch((error) => {
+        if (error.code == "auth/invalid-email") {
+          // this.showInvalidEmail();
+        } else if (error.code == "auth/email-already-in-use") {
+          // this.showExists();
+        }
+        errors = true;
+      }).then(function () {
+        if (!errors) {
+          // self.showSuccess();
+        }
+      })
+  }
 
   ngOnInit() {
   }
