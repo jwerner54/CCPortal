@@ -25,4 +25,5 @@ Run `git fetch --prune`
 Run `git branch -d <"branch name">`
 
 ## Deploy production build to Firebase
-Run `firebase deploy`
+First run `ng build --prod`
+Then run `firebase deploy`
