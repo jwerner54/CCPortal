@@ -7,70 +7,86 @@
     <div class="col-md-4">
       <div class="form-group">
         <label for="firstname" style="float: left;">First Name</label>
-        <input type="text" class="form-control" id="firstname" placeholder="First">
+        <input required type="text" class="form-control" [(ngModel)]="user.fname" name="fname" id="fname"
+          placeholder="First">
       </div>
       <div class="form-group">
-        <label for="exampleFormControlInput1" style="float: left;">Email address</label>
-        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+        <label for="email" style="float: left;">Email address</label>
+        <input required type="text" class="form-control" [(ngModel)]="user.email" name="email" id="email"
+          placeholder="name@example.com">
       </div>
       <div class="form-group">
         <label for="position" style="float: left;">Position</label>
-        <input type="text" class="form-control" id="position" placeholder="Position">
+        <input type="text" class="form-control" [(ngModel)]="user.position" name="position" id="position"
+          placeholder="Position">
       </div>
-      <div style="float: left; text-align: left;">
-        <label>Company Size</label>
-        <div class="form-check">
-          <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
-          <label class="form-check-label" for="exampleRadios1">
-            1-20
-          </label>
-        </div>
-        <div class="form-check">
-          <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
-          <label class="form-check-label" for="exampleRadios2">
-            21-50
-          </label>
-        </div>
-        <div class="form-check">
-          <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option3">
-          <label class="form-check-label" for="exampleRadios3">
-            51-100
-          </label>
-        </div>
-        <div class="form-check">
-          <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios4" value="option4">
-          <label class="form-check-label" for="exampleRadios4">
-            101-500
-          </label>
-        </div>
-        <div class="form-check">
-          <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios5" value="option5">
-          <label class="form-check-label" for="exampleRadios5">
-            500+
-          </label>
-        </div>
+      <div class="form-group">
+        <label for="password" style="float: left;">Password</label>
+        <input type="text" class="form-control" [(ngModel)]="user.password" name="password" id="password"
+          placeholder="Password">
       </div>
     </div>
 
     <!-- Right div -->
     <div class="col-md-4">
       <div class="form-group">
-        <label for="lastname" style="float: left;">Last Name</label>
-        <input type="text" class="form-control" id="lastname" placeholder="Last">
+        <label for="lname" style="float: left;">Last Name</label>
+        <input required type="text" class="form-control" [(ngModel)]="user.lname" name="lname" id="lname"
+          placeholder="Last">
       </div>
       <div class="form-group">
-        <label for="company" style="float: left;">Company Name</label>
-        <input type="text" class="form-control" id="company" placeholder="Company">
+        <label for="companyname" style="float: left;">Company Name</label>
+        <input required type="text" class="form-control" [(ngModel)]="user.companyname" name="companyname"
+          id="companyname" placeholder="Company">
       </div>
       <div class="form-group">
         <label for="phone" style="float: left;">Phone Number</label>
-        <input type="text" class="form-control" id="phone" placeholder="Phone">
+        <input type="text" class="form-control" [(ngModel)]="user.phone" name="phone" id="phone" placeholder="Phone">
+      </div>
+      <div style="float: left; text-align: left;">
+        <label>Company Size</label>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="companysize" id="companysize1"
+            [(ngModel)]="user.companysize" value="1-20">
+          <label class="form-check-label" for="companysize1">
+            1-20
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="companysize" id="companysize2"
+            [(ngModel)]="user.companysize" value="21-50">
+          <label class="form-check-label" for="companysize2">
+            21-50
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="companysize" id="companysize3"
+            [(ngModel)]="user.companysize" value="51-100">
+          <label class="form-check-label" for="companysize3">
+            51-100
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="companysize" id="companysize4"
+            [(ngModel)]="user.companysize" value="101-500">
+          <label class="form-check-label" for="companysize4">
+            101-500
+          </label>
+        </div>
+        <div class="form-check">
+          <!-- type="radio" name="exampleRadios" id="exampleRadios5" value="option5" -->
+          <input class="form-check-input" type="radio" name="companysize" id="companysize5"
+            [(ngModel)]="user.companysize" value="500+">
+          <label class="form-check-label" for="companysize5">
+            500+
+          </label>
+        </div>
       </div>
     </div>
     <div class="col-md-2"></div>
     <!-- Bottom div -->
     <div class="col-md-12" style="text-align: center; margin-top: 50px;">
-      <button type="button" [routerLink]="['/employer-dashboard']" class="btn btn-primary">Submit</button>
+      <button type="button" (click)="createUser()" [routerLink]="['/employer-dashboard']" class="btn btn-primary">Submit</button>
     </div>
   </form>
 </div>

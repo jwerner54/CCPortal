@@ -21,7 +21,7 @@ export class ProfessionalSignupComponent implements OnInit {
 
   createUser() {
     var errors = false;
-    this.authService.createUser(this.user.email, this.user.password, this.user.type, this.user.fname, this.user.lname, this.user.pronouns)
+    this.authService.createUserProfessional(this.user.email, this.user.password, this.user.type, this.user.fname, this.user.lname, this.user.pronouns)
       .catch((error) => {
         if (error.code == "auth/invalid-email") {
           // this.showInvalidEmail();

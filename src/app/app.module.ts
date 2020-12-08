@@ -22,6 +22,10 @@ import { VerifyEmailComponent } from './verify-email/verify-email.component';
 
 import { AngularFireModule } from "@angular/fire";
 import { AngularFireAuthModule } from "@angular/fire/auth";
+import { AuthGuardService } from './auth/auth-guard.service';
+import { AuthService } from './auth/auth.service';
+import { ManageActiveJobsComponent } from './manage-active-jobs/manage-active-jobs.component';
+import { CreateJobPostComponent } from './create-job-post/create-job-post.component';
 
 
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
@@ -37,7 +41,7 @@ const firebaseConfig = {
 };
 
 @NgModule({
-  declarations: [																								
+  declarations: [																										
     AppComponent,
       MainSignupComponent,
       DashboardComponent,
@@ -52,7 +56,9 @@ const firebaseConfig = {
       LoginComponent,
       AccountComponent,
       AboutUsComponent,
-      VerifyEmailComponent
+      VerifyEmailComponent,
+      ManageActiveJobsComponent,
+      CreateJobPostComponent
    ],
   imports: [
     BrowserModule,
@@ -74,10 +80,12 @@ const firebaseConfig = {
       {path: 'account', component: AccountComponent},
       {path: 'about-us', component: AboutUsComponent},
       {path: 'verify-email', component: VerifyEmailComponent},
+      {path: 'manage-active-jobs', component: ManageActiveJobsComponent},
+      {path: 'create-job-post', component: CreateJobPostComponent},
 
     ]),
   ],
-  providers: [],
+  providers: [AuthGuardService, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
