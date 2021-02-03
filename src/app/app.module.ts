@@ -66,7 +66,7 @@ const firebaseConfig = {
     AngularFireAuthModule,
     FormsModule,
     RouterModule.forRoot([
-      {path: '', component: MainSignupComponent},
+      {path: '', component: DashboardComponent},
       {path: 'main-signup', component: MainSignupComponent},
       {path: 'professional-dashboard', component: ProfessionalDashboardComponent},
       {path: 'employer-dashboard', component: EmployerDashboardComponent},
