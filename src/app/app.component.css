@@ -32,12 +32,12 @@ li a:hover {
   background-color: #f8f8ff;
 }
 
+
 .diverse-img {
   position: relative;
 }
 
 .diversity-img {
- /*2550 x 1175 img*/
   width: 100%;
   height: auto;
   object-fit: cover;
@@ -54,3 +54,5 @@ li a:hover {
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
+
