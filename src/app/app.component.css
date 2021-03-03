@@ -1,0 +1,56 @@
+.navbar {
+  /*width: 2000px;*/
+  width: 100%; 
+  text-align: center;
+  /*border: 1px solid #e7e7e7;*/
+  display: flex; justify-content: center
+}
+
+ul {
+  font-family: 'Darker Grotesque';
+  font-size: 20px;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: white;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #f8f8ff;
+}
+
+.diverse-img {
+  position: relative;
+}
+
+.diversity-img {
+ /*2550 x 1175 img*/
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  opacity: 0.75;
+}
+
+.msg {
+  text-align: center;
+  color: black;
+  font-family: 'Bebas Neue';
+  font-size: 70px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
