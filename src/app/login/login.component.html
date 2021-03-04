@@ -1,25 +1,24 @@
-<div class="wrapper fadeInDown" style="margin-top: 100px;">
+<div class="wrapper fadeInDown" style="margin-top: 70px;">
   <div id="formContent">
 
     <!-- Icon -->
     <div class="fadeIn first">
       <img src="assets/user1.png" id="icon" alt="User Icon"
         style=" margin-top: 20px; margin-bottom: 10px; opacity: 0.7; height: 150px; width: auto;" />
+        <div class="error" id="errorMsg">Error: please enter correct email and password.</div>
     </div>
 
     <!-- Login Form -->
     <form>
-      <input type="text" [(ngModel)]="user.email" id="email" class="fadeIn second" name="login" placeholder="email">
-      <input type="text" [(ngModel)]="user.password" id="password" class="fadeIn third" name="login"
-        placeholder="password">
-      <a href="">
-        <input type="button" class="fadeIn fourth" (click)="login()" value="Log In">
-      </a>
+      <input type="text" [(ngModel)]="user.email" id="email" class="fadeIn second" name="login" placeholder="email" required>
+      <input type="password" [(ngModel)]="user.password" id="password" class="fadeIn third password" name="login" placeholder="password" required>
+      <input type="button" class="fadeIn fourth" (click)="login()" value="Log In">
     </form>
 
+    <!-- Sign Up -->
     <div class="row">
       <div id="formFooter" class="" style="margin-left: 15px; width: 50%;">
-        <a class="underlineHover" href="/main-signup" style="text-decoration: none;">Sign Up</a>
+        <a class="underlineHover" href="" style="text-decoration: none;">Sign Up</a>
       </div>
 
       <!-- Remind Password -->

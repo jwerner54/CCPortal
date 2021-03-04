@@ -15,7 +15,7 @@ canActivate() {
     return true;
   }
   else {
-    this.router.navigate(['']);
+    this.router.navigate(['login']);
     return false;
   }
 }
