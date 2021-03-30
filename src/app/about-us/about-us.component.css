@@ -2,7 +2,7 @@
   text-align: center;
 }
 
-.diverse-img {
+/* .diverse-img {
   display: none;
   visibility: hidden;
 }
@@ -15,4 +15,25 @@
 .msg {
   display: none;
   visibility: hidden;
+} */
+.diverse-img {
+  position: relative;
+}
+
+.diversity-img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  opacity: 0.75;
+}
+
+.msg {
+  text-align: center;
+  color: black;
+  font-family: 'Bebas Neue';
+  font-size: 70px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../auth/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-professional-signup',
@@ -17,7 +18,7 @@ export class ProfessionalSignupComponent implements OnInit {
     type: 'professional'
   }
 
-  constructor(private authService: AuthService) { }
+  constructor(private authService: AuthService, private router: Router) { }
 
   createUser() {
     var errors = false;
@@ -31,9 +32,10 @@ export class ProfessionalSignupComponent implements OnInit {
         errors = true;
       }).then(function () {
         if (!errors) {
-          // self.showSuccess();
+          //show 'no errors' message
         }
-      })
+      });
+      this.router.navigate(['professional-dashboard']);
   }
 
   ngOnInit() {

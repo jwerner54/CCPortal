@@ -30,8 +30,8 @@ export class AuthService {
 
   //login user with given credentials
   async login(email: string, password: string) {
-    var result = await this.afAuth.signInWithEmailAndPassword(email, password)
-    this.router.navigate(['professional-dashboard']);
+    var result = await this.afAuth.signInWithEmailAndPassword(email, password);
+    this.router.navigate(["professional-dashboard"]);
   }
 
   // async register(email: string, password: string) {
@@ -49,7 +49,7 @@ export class AuthService {
   async logout() {
     await this.afAuth.signOut();
     localStorage.removeItem('user');
-    this.router.navigate(['login']);
+    this.router.navigate(['']);
   }
 
   //Check if user is logged in
