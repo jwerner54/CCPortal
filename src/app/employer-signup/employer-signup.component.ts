@@ -28,6 +28,7 @@ export class EmployerSignupComponent implements OnInit {
     this.authService.createUserEmployer(this.user.email, this.user.password, this.user.type, this.user.fname, this.user.lname, 
       this.user.companyname, this.user.companysize, this.user.position, this.user.phone)
       .catch((error) => {
+        this.showError();
         if (error.code == "auth/invalid-email") {
           // this.showInvalidEmail();
         } else if (error.code == "auth/email-already-in-use") {
@@ -39,6 +40,10 @@ export class EmployerSignupComponent implements OnInit {
           // self.showSuccess();
         }
       })
+  }
+
+  showError() {
+    document.getElementById("errorMsg").style.display = "block";
   }
 
   ngOnInit() {

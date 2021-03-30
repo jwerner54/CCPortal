@@ -1,92 +1,164 @@
 <div class="basic-page-div fadeInDown">
   <h1 class="basic-page-title fadeIn first">Employer Signup</h1>
+  <div class="error" id="errorMsg">
+    Error: please enter correct email and password.
+  </div>
 
-  <form class="form-group row fadeIn second" style="margin-top: 40px;">
+  <form class="form-group row fadeIn second" style="margin-top: 40px">
     <div class="col-md-2"></div>
     <!-- Left div -->
     <div class="col-md-4">
       <div class="form-group">
-        <label for="firstname" style="float: left;">First Name</label>
-        <input required type="text" class="form-control" [(ngModel)]="user.fname" name="fname" id="fname"
-          placeholder="First">
+        <label for="firstname" style="float: left">First Name *</label>
+        <input
+          required
+          type="text"
+          class="form-control"
+          [(ngModel)]="user.fname"
+          name="fname"
+          id="fname"
+          placeholder="First"
+        />
       </div>
       <div class="form-group">
-        <label for="email" style="float: left;">Email address</label>
-        <input required type="text" class="form-control" [(ngModel)]="user.email" name="email" id="email"
-          placeholder="name@example.com">
+        <label for="email" style="float: left">Email address *</label>
+        <input
+          required
+          type="text"
+          class="form-control"
+          [(ngModel)]="user.email"
+          name="email"
+          id="email"
+          placeholder="name@example.com"
+        />
       </div>
       <div class="form-group">
-        <label for="position" style="float: left;">Position</label>
-        <input type="text" class="form-control" [(ngModel)]="user.position" name="position" id="position"
-          placeholder="Position">
+        <label for="position" style="float: left">Position</label>
+        <input
+          type="text"
+          class="form-control"
+          [(ngModel)]="user.position"
+          name="position"
+          id="position"
+          placeholder="Position"
+        />
       </div>
       <div class="form-group">
-        <label for="password" style="float: left;">Password</label>
-        <input type="text" class="form-control" [(ngModel)]="user.password" name="password" id="password"
-          placeholder="Password">
+        <label for="password" style="float: left">Password *</label>
+        <input
+          type="text"
+          class="form-control"
+          [(ngModel)]="user.password"
+          name="password"
+          id="password"
+          placeholder="Password"
+        />
       </div>
     </div>
 
     <!-- Right div -->
     <div class="col-md-4">
       <div class="form-group">
-        <label for="lname" style="float: left;">Last Name</label>
-        <input required type="text" class="form-control" [(ngModel)]="user.lname" name="lname" id="lname"
-          placeholder="Last">
+        <label for="lname" style="float: left">Last Name *</label>
+        <input
+          required
+          type="text"
+          class="form-control"
+          [(ngModel)]="user.lname"
+          name="lname"
+          id="lname"
+          placeholder="Last"
+        />
       </div>
       <div class="form-group">
-        <label for="companyname" style="float: left;">Company Name</label>
-        <input required type="text" class="form-control" [(ngModel)]="user.companyname" name="companyname"
-          id="companyname" placeholder="Company">
+        <label for="companyname" style="float: left">Company Name</label>
+        <input
+          required
+          type="text"
+          class="form-control"
+          [(ngModel)]="user.companyname"
+          name="companyname"
+          id="companyname"
+          placeholder="Company"
+        />
       </div>
       <div class="form-group">
-        <label for="phone" style="float: left;">Phone Number</label>
-        <input type="text" class="form-control" [(ngModel)]="user.phone" name="phone" id="phone" placeholder="Phone">
+        <label for="phone" style="float: left">Phone Number</label>
+        <input
+          type="text"
+          class="form-control"
+          [(ngModel)]="user.phone"
+          name="phone"
+          id="phone"
+          placeholder="Phone"
+        />
       </div>
-      <div style="float: left; text-align: left;">
+      <div style="float: left; text-align: left">
         <label>Company Size</label>
         <div class="form-check">
-          <input class="form-check-input" type="radio" name="companysize" id="companysize1"
-            [(ngModel)]="user.companysize" value="1-20">
-          <label class="form-check-label" for="companysize1">
-            1-20
-          </label>
+          <input
+            class="form-check-input"
+            type="radio"
+            name="companysize"
+            id="companysize1"
+            [(ngModel)]="user.companysize"
+            value="1-20"
+          />
+          <label class="form-check-label" for="companysize1"> 1-20 </label>
         </div>
         <div class="form-check">
-          <input class="form-check-input" type="radio" name="companysize" id="companysize2"
-            [(ngModel)]="user.companysize" value="21-50">
-          <label class="form-check-label" for="companysize2">
-            21-50
-          </label>
+          <input
+            class="form-check-input"
+            type="radio"
+            name="companysize"
+            id="companysize2"
+            [(ngModel)]="user.companysize"
+            value="21-50"
+          />
+          <label class="form-check-label" for="companysize2"> 21-50 </label>
         </div>
         <div class="form-check">
-          <input class="form-check-input" type="radio" name="companysize" id="companysize3"
-            [(ngModel)]="user.companysize" value="51-100">
-          <label class="form-check-label" for="companysize3">
-            51-100
-          </label>
+          <input
+            class="form-check-input"
+            type="radio"
+            name="companysize"
+            id="companysize3"
+            [(ngModel)]="user.companysize"
+            value="51-100"
+          />
+          <label class="form-check-label" for="companysize3"> 51-100 </label>
         </div>
         <div class="form-check">
-          <input class="form-check-input" type="radio" name="companysize" id="companysize4"
-            [(ngModel)]="user.companysize" value="101-500">
-          <label class="form-check-label" for="companysize4">
-            101-500
-          </label>
+          <input
+            class="form-check-input"
+            type="radio"
+            name="companysize"
+            id="companysize4"
+            [(ngModel)]="user.companysize"
+            value="101-500"
+          />
+          <label class="form-check-label" for="companysize4"> 101-500 </label>
         </div>
         <div class="form-check">
           <!-- type="radio" name="exampleRadios" id="exampleRadios5" value="option5" -->
-          <input class="form-check-input" type="radio" name="companysize" id="companysize5"
-            [(ngModel)]="user.companysize" value="500+">
-          <label class="form-check-label" for="companysize5">
-            500+
-          </label>
+          <input
+            class="form-check-input"
+            type="radio"
+            name="companysize"
+            id="companysize5"
+            [(ngModel)]="user.companysize"
+            value="500+"
+          />
+          <label class="form-check-label" for="companysize5"> 500+ </label>
         </div>
       </div>
     </div>
     <div class="col-md-2"></div>
     <!-- Bottom div -->
-    <div class="col-md-12" style="text-align: center; margin-top: 50px;">
-      <button type="button" (click)="createUser()" class="btn btn-primary">Submit</button>
+    <div class="col-md-12" style="text-align: center; margin-top: 50px">
+      <button type="button" (click)="createUser()" class="btn btn-primary">
+        Submit
+      </button>
     </div>
   </form>
 </div>

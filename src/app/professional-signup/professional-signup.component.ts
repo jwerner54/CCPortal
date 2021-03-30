@@ -24,9 +24,12 @@ export class ProfessionalSignupComponent implements OnInit {
     var errors = false;
     this.authService.createUserProfessional(this.user.email, this.user.password, this.user.type, this.user.fname, this.user.lname, this.user.pronouns)
       .catch((error) => {
+        this.showError();
         if (error.code == "auth/invalid-email") {
+          
           // this.showInvalidEmail();
         } else if (error.code == "auth/email-already-in-use") {
+          
           // this.showExists();
         }
         errors = true;
@@ -36,6 +39,10 @@ export class ProfessionalSignupComponent implements OnInit {
         }
       });
       this.router.navigate(['professional-dashboard']);
+  }
+
+  showError() {
+    document.getElementById("errorMsg").style.display = "block";
   }
 
   ngOnInit() {
