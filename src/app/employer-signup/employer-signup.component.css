@@ -1,24 +1,31 @@
 .btn-primary {
-    margin-left: 3px;
-    width: 120px;
+  margin-left: 3px;
+  width: 120px;
 }
 
 .form-group {
-    color: rgb(24, 24, 24);
+  color: rgb(24, 24, 24);
 }
 
 .form-control-file {
-    cursor: pointer;
+  cursor: pointer;
+}
+
+.error {
+  color: red;
+  font-size: 15px;
+  margin: 10px 0px;
+  display: none;
 }
 
 .diverse-img {
-    display: none;
+  display: none;
 }
 
 .diversity-img {
-    display: none;
+  display: none;
 }
-  
+
 .msg {
-    display: none;
+  display: none;
 }
