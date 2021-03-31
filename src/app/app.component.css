@@ -1,9 +1,8 @@
 .navbar {
-  /*width: 2000px;*/
   width: 100%; 
   text-align: center;
-  /*border: 1px solid #e7e7e7;*/
-  display: flex; justify-content: center
+  display: flex; 
+  justify-content: center
 }
 
 ul {
@@ -31,7 +30,6 @@ li a {
 li a:hover {
   background-color: #f8f8ff;
 }
-
 
 .diverse-img {
   position: relative;

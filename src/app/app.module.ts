@@ -42,7 +42,7 @@ const firebaseConfig = {
 };
 
 @NgModule({
-  declarations: [																													
+  declarations: [																														
     AppComponent,
       MainSignupComponent,
       DashboardComponent,
@@ -60,7 +60,7 @@ const firebaseConfig = {
       VerifyEmailComponent,
       ManageActiveJobsComponent,
       CreateJobPostComponent,
-      PasswordResetFormComponent,
+      PasswordResetFormComponent
    ],
   imports: [
     BrowserModule,
