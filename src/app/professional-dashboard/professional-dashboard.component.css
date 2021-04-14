@@ -62,3 +62,15 @@
   height: 250px;
   font-size: 24px;
 }
+
+.shifts_button {
+  border: none;
+  background-color: darkgrey;
+  width: 100px;
+  height: 35px;
+  outline: none;
+}
+
+.shifts_button:hover {
+  background-color: lightgrey;
+}
