@@ -18,6 +18,7 @@ import { CommunityComponent } from './community/community.component';
 import { LoginComponent } from './login/login.component';
 import { AccountComponent } from './account/account.component';
 import { AboutUsComponent } from './about-us/about-us.component';
+import { BlogComponent } from './blog/blog.component';
 import { VerifyEmailComponent } from './verify-email/verify-email.component';
 
 import { AngularFireModule } from "@angular/fire";
@@ -57,6 +58,7 @@ const firebaseConfig = {
       LoginComponent,
       AccountComponent,
       AboutUsComponent,
+      BlogComponent,
       VerifyEmailComponent,
       ManageActiveJobsComponent,
       CreateJobPostComponent,
@@ -81,6 +83,7 @@ const firebaseConfig = {
       {path: 'login', component: LoginComponent},
       {path: 'account', component: AccountComponent, canActivate: [AuthGuardService]},
       {path: 'about-us', component: AboutUsComponent},
+      {path: 'blog', component: BlogComponent},
       {path: 'verify-email', component: VerifyEmailComponent, canActivate: [AuthGuardService]},
       {path: 'manage-active-jobs', component: ManageActiveJobsComponent, canActivate: [AuthGuardService]},
       {path: 'create-job-post', component: CreateJobPostComponent, canActivate: [AuthGuardService]},

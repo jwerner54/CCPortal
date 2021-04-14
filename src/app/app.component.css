@@ -1,12 +1,12 @@
 .navbar {
-  width: 100%; 
+  width: 100%;
   text-align: center;
-  display: flex; 
-  justify-content: center
+  display: flex;
+  justify-content: center;
 }
 
 ul {
-  font-family: 'Darker Grotesque';
+  font-family: "Darker Grotesque";
   font-size: 20px;
   list-style-type: none;
   margin: 0;
@@ -45,12 +45,10 @@ li a:hover {
 .msg {
   text-align: center;
   color: black;
-  font-family: 'Bebas Neue';
+  font-family: "Bebas Neue";
   font-size: 70px;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
-
-
