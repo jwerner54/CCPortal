@@ -26,6 +26,7 @@ import { AuthGuardService } from './auth/auth-guard.service';
 import { AuthService } from './auth/auth.service';
 import { ManageActiveJobsComponent } from './manage-active-jobs/manage-active-jobs.component';
 import { CreateJobPostComponent } from './create-job-post/create-job-post.component';
+import { PasswordResetFormComponent } from './password-reset-form/password-reset-form.component';
 
 
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
@@ -41,7 +42,7 @@ const firebaseConfig = {
 };
 
 @NgModule({
-  declarations: [																										
+  declarations: [																														
     AppComponent,
       MainSignupComponent,
       DashboardComponent,
@@ -58,7 +59,8 @@ const firebaseConfig = {
       AboutUsComponent,
       VerifyEmailComponent,
       ManageActiveJobsComponent,
-      CreateJobPostComponent
+      CreateJobPostComponent,
+      PasswordResetFormComponent
    ],
   imports: [
     BrowserModule,
@@ -82,6 +84,7 @@ const firebaseConfig = {
       {path: 'verify-email', component: VerifyEmailComponent, canActivate: [AuthGuardService]},
       {path: 'manage-active-jobs', component: ManageActiveJobsComponent, canActivate: [AuthGuardService]},
       {path: 'create-job-post', component: CreateJobPostComponent, canActivate: [AuthGuardService]},
+      {path: 'password-reset-form', component: PasswordResetFormComponent},
 
     ]),
   ],
