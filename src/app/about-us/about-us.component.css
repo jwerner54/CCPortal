@@ -95,3 +95,15 @@ p {
   margin: 50px 50px;
   width: 500px;
 }
+
+.column {
+  float: left;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+
+#images {
+  text-align: center;
+}
