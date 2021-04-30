@@ -21,9 +21,9 @@ export class ProfessionalSignupComponent implements OnInit {
   constructor(private authService: AuthService, private router: Router) { }
 
   createUser() {
-    var errors = false;
     this.authService.createUserProfessional(this.user.email, this.user.password, this.user.type, this.user.fname, this.user.lname, this.user.pronouns)
       .catch((error) => {
+        console.log("error");
         this.showError();
         if (error.code == "auth/invalid-email") {
           
@@ -32,13 +32,10 @@ export class ProfessionalSignupComponent implements OnInit {
           
           // this.showExists();
         }
-        errors = true;
       }).then(function () {
-        if (!errors) {
-          //show 'no errors' message
-        }
+
       });
-      this.router.navigate(['professional-dashboard']);
+      // this.router.navigate(['professional-dashboard']);
   }
 
   showError() {

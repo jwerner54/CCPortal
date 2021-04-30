@@ -1,3 +1,50 @@
-<p>
-  create-job-post works!
-</p>
+<div class="basic-page-div fadeInDown">
+  <h1 class="basic-page-title fadeIn first">Job Posting</h1>
+
+  <form class="form-group row" method="POST" #signupForm="ngForm" style="margin-top: 40px">
+    <div class="col-md-2"></div>
+    <!-- Left div -->
+    <div class="col-md-4">
+      <div class="form-group fadeIn first">
+        <label for="position" style="float: left">Job position *</label>
+        <input type="text" class="form-control"  name="position" id="position"
+          placeholder="Position" />
+      </div>
+      <div class="form-group fadeIn second">
+        <label for="description" style="float: left">Job description *</label>
+        <textarea required type="text" class="form-control" name="description"
+          id="description">
+        </textarea>
+      </div>
+      <div class="form-group fadeIn third" style="width: 100%">
+        <label for="resume" style="float: left">Required Skills</label>
+        <input type="text" class="form-control" name="skills" id="skills" placeholder="Skills" />
+      </div>
+    </div>
+
+    <!-- Right div -->
+    <div class="col-md-4">
+      <div class="form-group fadeIn first">
+        <label for="lname" style="float: left">Years of experience required</label>
+        <input type="text" class="form-control" name="lname" id="lname"
+          placeholder="Experience" />
+      </div>
+      <div class="form-group fadeIn second">
+        <label for="pronouns" style="float: left">Location</label>
+        <input type="text" class="form-control" name="lname" id="lname"
+          placeholder="Location" />
+      </div>
+      <div class="form-group fadeIn third">
+        <label for="password" style="float: left">Contact information: </label>
+        <input required type="url" class="form-control" name="password" id="password"
+          placeholder="Email or Phone" />
+      </div>
+    </div>
+    <div class="col-md-2"></div>
+    <div class="col-md-12 fadeIn third" style="text-align: center; margin-top: 50px">
+      <button type="button" class="btn btn-primary">
+        Submit
+      </button>
+    </div>
+  </form>
+</div>
