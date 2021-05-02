@@ -9,7 +9,7 @@
 </div>
 
 <!-- Tab content -->
-<div id="mentee" class="tabcontent">
+<div id="Mentee" class="tabcontent">
   <h3>Mentee Application</h3>
   <form class="form-group row fadeIn second" style="margin-top: 40px">
     <div class="col-md-2"></div>
@@ -21,7 +21,7 @@
           required
           type="text"
           class="form-control"
-          [(ngModel)]="user.fname"
+          [(ngModel)]="mentee.fname"
           name="fname"
           id="fname"
           placeholder="First"
@@ -33,7 +33,7 @@
           required
           type="text"
           class="form-control"
-          [(ngModel)]="user.email"
+          [(ngModel)]="mentee.email"
           name="email"
           id="email"
           placeholder="name@example.com"
@@ -44,7 +44,7 @@
         <input
           type="date"
           class="form-control"
-          [(ngModel)]="user.birthday"
+          [(ngModel)]="mentee.birthday"
           name="birthday"
           id="birthday"
         />
@@ -70,7 +70,7 @@
           required
           type="text"
           class="form-control"
-          [(ngModel)]="user.lname"
+          [(ngModel)]="mentee.lname"
           name="lname"
           id="lname"
           placeholder="Last"
@@ -99,7 +99,7 @@
         <input
           type="text"
           class="form-control"
-          [(ngModel)]="user.phone"
+          [(ngModel)]="mentee.phone"
           name="phone"
           id="phone"
           placeholder="Phone"
@@ -116,7 +116,7 @@
   </form>
 </div>
 
-<div id="mentor" class="tabcontent">
+<div id="Mentor" class="tabcontent">
   <h3>Mentor Application</h3>
   <form class="form-group row fadeIn second" style="margin-top: 40px">
     <div class="col-md-2"></div>
@@ -128,7 +128,7 @@
           required
           type="text"
           class="form-control"
-          [(ngModel)]="user.fname"
+          [(ngModel)]="mentor.fname"
           name="fname"
           id="fname"
           placeholder="First"
@@ -140,7 +140,7 @@
           required
           type="text"
           class="form-control"
-          [(ngModel)]="user.email"
+          [(ngModel)]="mentor.email"
           name="email"
           id="email"
           placeholder="name@example.com"
@@ -151,7 +151,7 @@
         <input
           type="date"
           class="form-control"
-          [(ngModel)]="user.birthday"
+          [(ngModel)]="mentor.birthday"
           name="birthday"
           id="birthday"
         />
@@ -177,7 +177,7 @@
           required
           type="text"
           class="form-control"
-          [(ngModel)]="user.lname"
+          [(ngModel)]="mentor.lname"
           name="lname"
           id="lname"
           placeholder="Last"
@@ -187,22 +187,33 @@
         <label for="companyname" style="float: left"
           >Have you mentored before?</label
         >
+        <label for="mentorexp1">Yes</label>
         <input
-          required
-          type="text"
-          class="form-control"
-          [(ngModel)]="user.companyname"
-          name="companyname"
-          id="companyname"
-          placeholder="Company"
+          type="radio"
+          value="yes"
+          class="form-check-input"
+          name="mentorexp"
+          id="mentorexp1"
+          [(ngModel)]="mentor.mentorexp"
         />
+        <br />
+        <label for="mentorexp2">No</label>
+        <input
+          type="radio"
+          value="no"
+          class="form-check-input"
+          name="mentorexp"
+          id="mentorexp2"
+          [(ngModel)]="mentor.mentorexp"
+        />
+        <br />
       </div>
       <div class="form-group">
         <label for="phone" style="float: left">Phone Number</label>
         <input
           type="text"
           class="form-control"
-          [(ngModel)]="user.phone"
+          [(ngModel)]="mentor.phone"
           name="phone"
           id="phone"
           placeholder="Work Number"
@@ -214,45 +225,45 @@
           <input
             class="form-check-input"
             type="radio"
-            name="companysize"
-            id="companysize1"
-            [(ngModel)]="user.companysize"
+            name="experience"
+            id="experience1"
+            [(ngModel)]="mentor.experience"
             value="1-3"
           />
-          <label class="form-check-label" for="companysize1"> 1-3 </label>
+          <label class="form-check-label" for="experience1"> 1-3 </label>
         </div>
         <div class="form-check">
           <input
             class="form-check-input"
             type="radio"
-            name="companysize"
-            id="companysize2"
-            [(ngModel)]="user.companysize"
+            name="experience"
+            id="experience2"
+            [(ngModel)]="mentor.experience"
             value="4-7"
           />
-          <label class="form-check-label" for="companysize2"> 4-7 </label>
+          <label class="form-check-label" for="experience2"> 4-7 </label>
         </div>
         <div class="form-check">
           <input
             class="form-check-input"
             type="radio"
-            name="companysize"
-            id="companysize3"
-            [(ngModel)]="user.companysize"
+            name="experience"
+            id="experience3"
+            [(ngModel)]="mentor.experience"
             value="8-10"
           />
-          <label class="form-check-label" for="companysize3"> 8-10 </label>
+          <label class="form-check-label" for="experience3"> 8-10 </label>
         </div>
         <div class="form-check">
           <input
             class="form-check-input"
             type="radio"
-            name="companysize"
-            id="companysize4"
-            [(ngModel)]="user.companysize"
+            name="experience"
+            id="experience4"
+            [(ngModel)]="mentor.experience"
             value="10+"
           />
-          <label class="form-check-label" for="companysize4"> 10+ </label>
+          <label class="form-check-label" for="experience4"> 10+ </label>
         </div>
       </div>
     </div>

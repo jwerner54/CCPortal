@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { AuthService } from '../auth/auth.service';
 
 @Component({
   selector: 'app-mentor-matching',
@@ -7,7 +9,33 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MentorMatchingComponent implements OnInit {
 
-  constructor() { }
+  mentee = {
+    fname: '',
+    lname: '',
+    email: '',
+    birthday: '',
+    phone: '',
+    type: 'mentee'
+  }
+
+  mentor = {
+    fname: '',
+    lname: '',
+    email: '',
+    birthday: '',
+    mentorexp: '',
+    experience: '',
+    phone: '',
+    type: 'mentor'
+  }
+
+  constructor(private authService: AuthService, private router: Router) { }
+
+  submitMentee() {
+  }
+
+  submitMentor() {
+  }
 
   ngOnInit() {
   }
