@@ -1,0 +1,32 @@
+<div class="wrapper fadeInDown" style="margin-top: 70px;">
+  <div id="formContent">
+
+    <!-- Icon -->
+    <div class="fadeIn first">
+      <img src="assets/user1.png" id="icon" alt="User Icon"
+        style=" margin-top: 20px; margin-bottom: 10px; opacity: 0.7; height: 150px; width: auto;" />
+      <div class="error" id="noEmail">Error: user not found</div>
+      <div class="error" id="wrongPassword">Error: incorrect password</div>
+      <div class="error" id="notVerified">Error: please verify email before logging in</div>
+    </div>
+
+    <!-- Login Form -->
+    <form>
+      <input type="text" id="email" class="fadeIn second" name="login" placeholder="email" #userName required>
+      <input type="password" id="password" class="fadeIn third password" name="login" placeholder="password" #userPassword required>
+      <input type="button" class="fadeIn fourth" (click)="authService.SignIn(userName.value, userPassword.value)" value="Log In">
+    </form>
+
+    <!-- Sign Up -->
+    <div class="row">
+      <div id="formFooter" class="" style="margin-left: 15px; width: 50%;">
+        <a class="underlineHover" routerLink="/main-signup" style="text-decoration: none;">Sign Up</a>
+      </div>
+
+      <!-- Reset Password -->
+      <div id="formFooter" class="" style="width: 43.6%;">
+        <a class="underlineHover" routerLink="/forgot-password" style="text-decoration: none;">Forgot Password?</a>
+      </div>
+    </div>
+  </div>
+</div>

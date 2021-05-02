@@ -1,0 +1,90 @@
+<div class="basic-page-div fadeInDown">
+    <h1 class="basic-page-title fadeIn first">Employer Signup</h1>
+    <div class="error" id="emailExists">Error: email address already in use by another account</div>
+    <div class="error" id="invalidEmail">Error: email address is badly formatted</div>
+    <div class="error" id="weakPassword">Error: password must be 6 characters long or more</div>
+    <div class="error" id="wrongFname">Error: please enter a first name</div>
+    <div class="error" id="wrongLname">Error: please enter a last name</div>
+  
+    <div class="form-group row fadeIn first" style="margin-top: 40px">
+      <div class="col-md-2"></div>
+      <!-- Left div -->
+      <div class="col-md-4">
+        <div class="form-group">
+          <label for="firstname" style="float: left">First Name *</label>
+          <input required type="text" class="form-control" #userFname name="fname" id="fname" placeholder="First" />
+        </div>
+        <div class="form-group">
+          <label for="email" style="float: left">Email address *</label>
+          <input required type="text" class="form-control" #userEmail name="email" id="email" placeholder="name@example.com" />
+        </div>
+        <div class="form-group">
+          <label for="position" style="float: left">Position</label>
+          <input type="text" class="form-control" #userPosition name="position" id="position" placeholder="Position" />
+        </div>
+        <div class="form-group">
+          <label for="password" style="float: left">Password *</label>
+          <input type="text" class="form-control" #userPassword name="password" id="password" placeholder="Password" />
+        </div>
+      </div>
+  
+      <!-- Right div -->
+      <div class="col-md-4">
+        <div class="form-group">
+          <label for="lname" style="float: left">Last Name *</label>
+          <input required type="text" class="form-control" #userLname name="lname" id="lname" placeholder="Last" />
+        </div>
+        <div class="form-group">
+          <label for="companyname" style="float: left">Company Name</label>
+          <input required type="text" class="form-control" #companyName name="companyname"
+            id="companyname" placeholder="Company" />
+        </div>
+        <div class="form-group">
+          <label for="phone" style="float: left">Phone Number</label>
+          <input type="text" class="form-control" #userPhone name="phone" id="phone" placeholder="Phone" />
+        </div>
+        <!-- <div style="float: left; text-align: left">
+          <label>Company Size</label>
+          <div class="form-check">
+            <input class="form-check-input" selected type="radio" name="companysize" id="companysize1" #companySize1 value="1-20" />
+            <label class="form-check-label" for="companysize1"> 1-20 </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="companysize" id="companysize2" #companySize2 value="21-50" />
+            <label class="form-check-label" for="companysize2"> 21-50 </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="companysize" id="companysize3" #companySize3 value="51-100" />
+            <label class="form-check-label" for="companysize3"> 51-100 </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="companysize" id="companysize4" #companySize4 value="101-500" />
+            <label class="form-check-label" for="companysize4"> 101-500 </label>
+          </div>
+          <div class="form-check">
+            <!- type="radio" name="exampleRadios" id="exampleRadios5" value="option5" ->
+            <input class="form-check-input" type="radio" name="companysize" id="companysize5" #companySize5 value="500+" />
+            <label class="form-check-label" for="companysize5"> 500+ </label>
+          </div>
+        </div> -->
+        <div class="form-group fadeIn second">
+            <label for="companysize" style="float: left">Company Size</label>
+            <select class="form-control" name="companysize" id="companysize" #companySize>
+              <option>1-20</option>
+              <option>21-50</option>
+              <option>51-100</option>
+              <option>101-500</option>
+              <option>500+</option>
+            </select>
+          </div>
+      </div>
+
+
+      <div class="col-md-2"></div>
+      <div class="col-md-12 fadeIn third" style="text-align: center; margin-top: 50px">
+        <button type="button" (click)="authService.SignUpEmployer(userEmail.value, userPassword.value, userFname.value, userLname.value, companyName.value, userPosition.value, userPhone.value, companySize.value)" class="btn btn-primary">
+          Submit
+        </button>
+      </div>
+    </div>
+  </div>

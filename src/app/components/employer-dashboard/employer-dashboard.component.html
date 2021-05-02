@@ -1,0 +1,39 @@
+<div class="basic-page-div fadeInDown" *ngIf="authService.userData as user">
+    <div class="row fadeIn first">
+      <div class="col-9">
+        <h1 class="basic-page-title" style="float: right; margin-right: 90px">
+          Employer Dashboard
+        </h1>
+      </div>
+      <div class="col-3">
+        <h2 style="font-size: 20px;">Hello, {{(user.displayName)}}</h2>
+        <p style="margin-top: 25px; margin-bottom: 0"></p>
+        <a href="/account-employer">
+          <button style="margin-top: 5px" type="button" class="btn btn-primary">
+            Account
+          </button>
+        </a>
+        <a (click)="authService.SignOut()">
+          <button style=" margin-left: 10px; margin-top: 5px;" type="button"class="btn btn-primary">Log Out</button>
+        </a>
+      </div>
+    </div>
+    <div class="row fadeIn second" style="margin-top: 60px">
+      <div class="col-md-4 button-div">
+        <button routerLink="/create-job-post" class="button button1">
+          Create Job Posting
+        </button>
+      </div>
+      <div class="col-md-4 button-div">
+        <button routerLink="/manage-active-jobs" class="button button2">
+          Manage Active Jobs
+        </button>
+      </div>
+      <div class="col-md-4 button-div">
+        <button routerLink="/browse-professionals" class="button button3">
+          Browse Professionals
+        </button>
+      </div>
+    </div>
+  </div>
+  

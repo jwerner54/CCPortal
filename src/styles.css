@@ -1,199 +1,197 @@
 /* GLOBAL STYLES */
 .clearfix::after {
-  content: "";
-  clear: both;
-  display: table;
-}
-
-/* Navbar */
-.navbar {
-  /* background-color: lightgray; */
-}
-
-.nav_links_div {
-  text-align: center;
-}
-
-.nav_title {
-  color: rgb(4, 84, 204);
-  text-decoration: none;
-  font-size: xx-large;
-  font-weight: 600;
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-.nav_title:hover {
-  text-decoration: none;
-  opacity: 0.6;
-}
-
-.nav_button {
-  color: black;
-  margin-left: 1em;
-  text-decoration: none;
-  font-size: larger;
-}
-
-.nav_button:hover {
-  color: gray;
-  text-decoration: none;
-}
-
-.nav-img {
-  width: auto;
-  height: 80px;
-  /* margin: 10px 0 0 20px; */
-  /* Temp */
-}
-
-/* Page defaults */
-.basic-page-title {
-  font-family: Alegreya Sans;
-  font-size: 58px;
-  margin-top: 30px;
-  color: rgb(22, 168, 239);
-}
-
-.basic-page-div {
-  margin: auto;
-  text-align: center;
-  height: 100%;
-  width: 80%;
-}
-
-.basic-text {
-  font-family: Barlow;
-  color: rgb(24, 24, 24);
-}
-
-/* Button defaults */
-.basic-button {
-  border-radius: 8px;
-  width: 95%;
-  height: 100%;
-  box-shadow: 0px 0px 7px 0px #999;
-  font-size: 30px;
-  background-color: #fff;
-}
-
-.basic-button:active {
-  box-shadow: 0 0 #999;
-}
-
-.basic-button:focus {
-  outline: none;
-}
-
-/* ANIMATIONS */
-
-/* Simple CSS3 Fade-in-down Animation */
-.fadeInDown {
-  -webkit-animation-name: fadeInDown;
-  animation-name: fadeInDown;
-  -webkit-animation-duration: 1s;
-  animation-duration: 1s;
-  -webkit-animation-fill-mode: both;
-  animation-fill-mode: both;
-}
-
-@-webkit-keyframes fadeInDown {
-  0% {
+    content: "";
+    clear: both;
+    display: table;
+  }
+  
+  /* Navbar */
+  
+  .nav_links_div {
+    text-align: center;
+  }
+  
+  .nav_title {
+    color: rgb(4, 84, 204);
+    text-decoration: none;
+    font-size: xx-large;
+    font-weight: 600;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  .nav_title:hover {
+    text-decoration: none;
+    opacity: 0.6;
+  }
+  
+  .nav_button {
+    color: black;
+    margin-left: 1em;
+    text-decoration: none;
+    font-size: larger;
+  }
+  
+  .nav_button:hover {
+    color: gray;
+    text-decoration: none;
+  }
+  
+  .nav-img {
+    width: auto;
+    height: 80px;
+    /* margin: 10px 0 0 20px; */
+    /* Temp */
+  }
+  
+  /* Page defaults */
+  .basic-page-title {
+    font-family: Alegreya Sans;
+    font-size: 58px;
+    margin-top: 30px;
+    color: rgb(22, 168, 239);
+  }
+  
+  .basic-page-div {
+    margin: auto;
+    text-align: center;
+    height: 100%;
+    width: 80%;
+  }
+  
+  .basic-text {
+    font-family: Barlow;
+    color: rgb(24, 24, 24);
+  }
+  
+  /* Button defaults */
+  .basic-button {
+    border-radius: 8px;
+    width: 95%;
+    height: 100%;
+    box-shadow: 0px 0px 7px 0px #999;
+    font-size: 30px;
+    background-color: #fff;
+  }
+  
+  .basic-button:active {
+    box-shadow: 0 0 #999;
+  }
+  
+  .basic-button:focus {
+    outline: none;
+  }
+  
+  /* ANIMATIONS */
+  
+  /* Simple CSS3 Fade-in-down Animation */
+  .fadeInDown {
+    -webkit-animation-name: fadeInDown;
+    animation-name: fadeInDown;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+  }
+  
+  @-webkit-keyframes fadeInDown {
+    0% {
+      opacity: 0;
+      -webkit-transform: translate3d(0, -100%, 0);
+      transform: translate3d(0, -100%, 0);
+    }
+    100% {
+      opacity: 1;
+      -webkit-transform: none;
+      transform: none;
+    }
+  }
+  
+  @keyframes fadeInDown {
+    0% {
+      opacity: 0;
+      -webkit-transform: translate3d(0, -100%, 0);
+      transform: translate3d(0, -100%, 0);
+    }
+    100% {
+      opacity: 1;
+      -webkit-transform: none;
+      transform: none;
+    }
+  }
+  
+  /* Simple CSS3 Fade-in Animation */
+  @-webkit-keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  @-moz-keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  .fadeIn {
     opacity: 0;
-    -webkit-transform: translate3d(0, -100%, 0);
-    transform: translate3d(0, -100%, 0);
+    -webkit-animation: fadeIn ease-in 1;
+    -moz-animation: fadeIn ease-in 1;
+    animation: fadeIn ease-in 1;
+  
+    -webkit-animation-fill-mode: forwards;
+    -moz-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+  
+    -webkit-animation-duration: 1s;
+    -moz-animation-duration: 1s;
+    animation-duration: 1s;
   }
-  100% {
-    opacity: 1;
-    -webkit-transform: none;
-    transform: none;
+  
+  .fadeIn.first {
+    -webkit-animation-delay: 0.4s;
+    -moz-animation-delay: 0.4s;
+    animation-delay: 0.4s;
   }
-}
-
-@keyframes fadeInDown {
-  0% {
-    opacity: 0;
-    -webkit-transform: translate3d(0, -100%, 0);
-    transform: translate3d(0, -100%, 0);
+  
+  .fadeIn.second {
+    -webkit-animation-delay: 0.6s;
+    -moz-animation-delay: 0.6s;
+    animation-delay: 0.6s;
   }
-  100% {
-    opacity: 1;
-    -webkit-transform: none;
-    transform: none;
+  
+  .fadeIn.third {
+    -webkit-animation-delay: 0.8s;
+    -moz-animation-delay: 0.8s;
+    animation-delay: 0.8s;
   }
-}
-
-/* Simple CSS3 Fade-in Animation */
-@-webkit-keyframes fadeIn {
-  from {
-    opacity: 0;
+  
+  .fadeIn.fourth {
+    -webkit-animation-delay: 1s;
+    -moz-animation-delay: 1s;
+    animation-delay: 1s;
   }
-  to {
-    opacity: 1;
-  }
-}
-@-moz-keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-.fadeIn {
-  opacity: 0;
-  -webkit-animation: fadeIn ease-in 1;
-  -moz-animation: fadeIn ease-in 1;
-  animation: fadeIn ease-in 1;
-
-  -webkit-animation-fill-mode: forwards;
-  -moz-animation-fill-mode: forwards;
-  animation-fill-mode: forwards;
-
-  -webkit-animation-duration: 1s;
-  -moz-animation-duration: 1s;
-  animation-duration: 1s;
-}
-
-.fadeIn.first {
-  -webkit-animation-delay: 0.4s;
-  -moz-animation-delay: 0.4s;
-  animation-delay: 0.4s;
-}
-
-.fadeIn.second {
-  -webkit-animation-delay: 0.6s;
-  -moz-animation-delay: 0.6s;
-  animation-delay: 0.6s;
-}
-
-.fadeIn.third {
-  -webkit-animation-delay: 0.8s;
-  -moz-animation-delay: 0.8s;
-  animation-delay: 0.8s;
-}
-
-.fadeIn.fourth {
-  -webkit-animation-delay: 1s;
-  -moz-animation-delay: 1s;
-  animation-delay: 1s;
-}
-
-/* Info:
-Blue color: rgb(22, 168, 239)
-Purple: rgb(23, 18, 85)
-Gray: rgb(200, 208, 224)
-
-Text Color: rgb(24, 24, 24)
-
-To deploy:
-firebase deploy --only hosting:colorful-connection
-*/
+  
+  /* Info:
+  Blue color: rgb(22, 168, 239)
+  Purple: rgb(23, 18, 85)
+  Gray: rgb(200, 208, 224)
+  
+  Text Color: rgb(24, 24, 24)
+  
+  To deploy:
+  firebase deploy --only hosting:colorful-connection
+  */
+  

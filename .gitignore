@@ -44,7 +44,3 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
-
-# Custom File Ignores
-Start.bat
-cmd.bat

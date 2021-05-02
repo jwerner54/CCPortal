@@ -1,3 +1,22 @@
+## Packages Info
+Angular Versions: 
+Angular CLI                     11.2.11
+@angular-devkit/architect       0.1102.11
+@angular-devkit/build-angular   0.1102.11
+@angular-devkit/core            11.2.11
+@angular-devkit/schematics      11.2.11
+@angular/cli                    11.2.11
+@angular/fire                   6.1.4
+@schematics/angular             11.2.11
+@schematics/update              0.1102.11
+rxjs                            6.6.7
+typescript                      4.0.7
+
+Firebase Version: 9.10.0
+
+npm Version: 6.13.4
+
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.

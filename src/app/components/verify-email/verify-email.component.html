@@ -1,0 +1,25 @@
+<div class="displayTable">
+    <div class="displayTableCell">
+  
+      <div class="authBlock">
+        <h1>Thank You for Registering</h1>
+        <div class="formGroup" *ngIf="authService.userData as user">
+          <p class="text-center">We have sent a confirmation email to <strong>{{user.email}}</strong>.</p>
+          <p class="text-center">Please check your email and click on the link to verfiy your email address.</p>
+        </div>
+        
+        <!-- Calling SendVerificationMail() method using authService Api -->
+        <p id="resendText" style="display: none; margin: 60px 0px 10px 0px;">Verification email has been sent.</p>
+        <div class="error" id="tooManyRequests">Error: please wait at least 2 minutes before attempting to resend the verification email.</div>
+        <div class="resendBtn" id="resendBtn">
+          <button type="button" class="btn" style="outline: none; border: none;" (click)="authService.ResendVerificationMail()">Resend Verification Email</button>
+        </div>
+  
+      </div>
+  
+      <div class="redirectToLogin">
+        <a class="redirect" routerLink="/login">Return to login</a>
+      </div>
+  
+    </div>
+  </div>
