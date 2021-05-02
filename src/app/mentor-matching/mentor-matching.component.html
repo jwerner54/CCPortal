@@ -1,297 +1,315 @@
-<h1 class="mentor-title">Mentor Matching</h1>
-<div class="tab">
-  <button class="tablinks" onclick="openApp(event, 'Mentee')">
-    Mentee Application
-  </button>
-  <button class="tablinks" onclick="openApp(event, 'Mentor')">
-    Mentor Application
-  </button>
-</div>
+<body>
+  <h1 class="mentor-title">Mentor Matching</h1>
+  <div class="tab">
+    <button
+      class="tablinks"
+      [ngClass]="{ active: isActive(1) }"
+      (click)="openTab(1)"
+    >
+      Mentee Application
+    </button>
+    <button
+      class="tablinks"
+      [ngClass]="{ active: isActive(2) }"
+      (click)="openTab(2)"
+    >
+      Mentor Application
+    </button>
+    <!-- <button class="tablinks" onclick="openApp(event, 'Mentee')" id="default">
+      Mentee Application
+    </button>
+    <button class="tablinks" onclick="openApp(event, 'Mentor')">
+      Mentor Application
+    </button> -->
+  </div>
 
-<!-- Tab content -->
-<div id="Mentee" class="tabcontent">
-  <h3>Mentee Application</h3>
-  <form class="form-group row fadeIn second" style="margin-top: 40px">
-    <div class="col-md-2"></div>
-    <!-- Left div -->
-    <div class="col-md-4">
-      <div class="form-group">
-        <label for="firstname" style="float: left">First Name </label>
-        <input
-          required
-          type="text"
-          class="form-control"
-          [(ngModel)]="mentee.fname"
-          name="fname"
-          id="fname"
-          placeholder="First"
-        />
-      </div>
-      <div class="form-group">
-        <label for="email" style="float: left">Email address </label>
-        <input
-          required
-          type="text"
-          class="form-control"
-          [(ngModel)]="mentee.email"
-          name="email"
-          id="email"
-          placeholder="name@example.com"
-        />
-      </div>
-      <div class="form-group">
-        <label for="position" style="float: left">Date of Birth</label>
-        <input
-          type="date"
-          class="form-control"
-          [(ngModel)]="mentee.birthday"
-          name="birthday"
-          id="birthday"
-        />
-      </div>
-      <div class="form-group">
-        <label for="password" style="float: left">Industry</label>
-        <select name="industry" id="industry">
-          <option value="arts">Arts & Entertainment</option>
-          <option value="eng">Engineering</option>
-          <option value="health">Health Care and Medicine</option>
-          <option value="business">Business & Development</option>
-          <option value="finance">Financial Services</option>
-          <option value="science">Science & Technology</option>
-        </select>
-      </div>
-    </div>
-
-    <!-- Right div -->
-    <div class="col-md-4">
-      <div class="form-group">
-        <label for="lname" style="float: left">Last Name</label>
-        <input
-          required
-          type="text"
-          class="form-control"
-          [(ngModel)]="mentee.lname"
-          name="lname"
-          id="lname"
-          placeholder="Last"
-        />
-      </div>
-      <div class="form-group">
-        <label for="companyname" style="float: left"
-          >Areas for Mentoring Impact:</label
-        >
-        <input type="checkbox" id="area1" name="area1" value="one" />
-        <label for="area1">
-          Knowledge and Practice of Professional Etiquette</label
-        ><br />
-        <input type="checkbox" id="area2" name="area2" value="two" />
-        <label for="area2"> Focus and Practice on the Field of Career</label
-        ><br />
-        <input type="checkbox" id="area3" name="area3" value="three" />
-        <label for="area3"> Professional Network Expansion</label><br />
-        <input type="checkbox" id="area4" name="area4" value="four" />
-        <label for="area4"> Personality Development</label><br />
-        <input type="checkbox" id="area5" name="area5" value="five" />
-        <label for="area5"> Communication Skills Improvement</label><br />
-      </div>
-      <div class="form-group">
-        <label for="phone" style="float: left">Phone Number</label>
-        <input
-          type="text"
-          class="form-control"
-          [(ngModel)]="mentee.phone"
-          name="phone"
-          id="phone"
-          placeholder="Phone"
-        />
-      </div>
-    </div>
-    <div class="col-md-2"></div>
-    <!-- Bottom div -->
-    <div class="col-md-12" style="text-align: center; margin-top: 50px">
-      <button type="button" (click)="submitMentee()" class="btn btn-primary">
-        Submit
-      </button>
-    </div>
-  </form>
-</div>
-
-<div id="Mentor" class="tabcontent">
-  <h3>Mentor Application</h3>
-  <form class="form-group row fadeIn second" style="margin-top: 40px">
-    <div class="col-md-2"></div>
-    <!-- Left div -->
-    <div class="col-md-4">
-      <div class="form-group">
-        <label for="firstname" style="float: left">First Name</label>
-        <input
-          required
-          type="text"
-          class="form-control"
-          [(ngModel)]="mentor.fname"
-          name="fname"
-          id="fname"
-          placeholder="First"
-        />
-      </div>
-      <div class="form-group">
-        <label for="email" style="float: left">Email address</label>
-        <input
-          required
-          type="text"
-          class="form-control"
-          [(ngModel)]="mentor.email"
-          name="email"
-          id="email"
-          placeholder="name@example.com"
-        />
-      </div>
-      <div class="form-group">
-        <label for="position" style="float: left">Date of Birth</label>
-        <input
-          type="date"
-          class="form-control"
-          [(ngModel)]="mentor.birthday"
-          name="birthday"
-          id="birthday"
-        />
-      </div>
-      <div class="form-group">
-        <label for="password" style="float: left">Industry</label>
-        <select name="industry" id="industry">
-          <option value="arts">Arts & Entertainment</option>
-          <option value="eng">Engineering</option>
-          <option value="health">Health Care and Medicine</option>
-          <option value="business">Business & Development</option>
-          <option value="finance">Financial Services</option>
-          <option value="science">Science & Technology</option>
-        </select>
-      </div>
-    </div>
-
-    <!-- Right div -->
-    <div class="col-md-4">
-      <div class="form-group">
-        <label for="lname" style="float: left">Last Name</label>
-        <input
-          required
-          type="text"
-          class="form-control"
-          [(ngModel)]="mentor.lname"
-          name="lname"
-          id="lname"
-          placeholder="Last"
-        />
-      </div>
-      <div class="form-group">
-        <label for="companyname" style="float: left"
-          >Have you mentored before?</label
-        >
-        <label for="mentorexp1">Yes</label>
-        <input
-          type="radio"
-          value="yes"
-          class="form-check-input"
-          name="mentorexp"
-          id="mentorexp1"
-          [(ngModel)]="mentor.mentorexp"
-        />
-        <br />
-        <label for="mentorexp2">No</label>
-        <input
-          type="radio"
-          value="no"
-          class="form-check-input"
-          name="mentorexp"
-          id="mentorexp2"
-          [(ngModel)]="mentor.mentorexp"
-        />
-        <br />
-      </div>
-      <div class="form-group">
-        <label for="phone" style="float: left">Phone Number</label>
-        <input
-          type="text"
-          class="form-control"
-          [(ngModel)]="mentor.phone"
-          name="phone"
-          id="phone"
-          placeholder="Work Number"
-        />
-      </div>
-      <div style="float: left; text-align: left">
-        <label>How many years of experience do you have?</label>
-        <div class="form-check">
+  <!-- Tab content -->
+  <div [hidden]="!isActive(1)" id="Mentee" class="tabcontent">
+    <h3>Mentee Application</h3>
+    <form class="form-group row fadeIn second" style="margin-top: 40px">
+      <div class="col-md-2"></div>
+      <!-- Left div -->
+      <div class="col-md-4">
+        <div class="form-group">
+          <label for="firstname" style="float: left">First Name </label>
           <input
-            class="form-check-input"
-            type="radio"
-            name="experience"
-            id="experience1"
-            [(ngModel)]="mentor.experience"
-            value="1-3"
+            required
+            type="text"
+            class="form-control"
+            [(ngModel)]="mentee.fname"
+            name="fname"
+            id="fname"
+            placeholder="First"
           />
-          <label class="form-check-label" for="experience1"> 1-3 </label>
         </div>
-        <div class="form-check">
+        <div class="form-group">
+          <label for="email" style="float: left">Email address </label>
           <input
-            class="form-check-input"
-            type="radio"
-            name="experience"
-            id="experience2"
-            [(ngModel)]="mentor.experience"
-            value="4-7"
+            required
+            type="text"
+            class="form-control"
+            [(ngModel)]="mentee.email"
+            name="email"
+            id="email"
+            placeholder="name@example.com"
           />
-          <label class="form-check-label" for="experience2"> 4-7 </label>
         </div>
-        <div class="form-check">
+        <div class="form-group">
+          <label for="position" style="float: left">Date of Birth</label>
           <input
-            class="form-check-input"
-            type="radio"
-            name="experience"
-            id="experience3"
-            [(ngModel)]="mentor.experience"
-            value="8-10"
+            type="date"
+            class="form-control"
+            [(ngModel)]="mentee.birthday"
+            name="birthday"
+            id="birthday"
           />
-          <label class="form-check-label" for="experience3"> 8-10 </label>
         </div>
-        <div class="form-check">
-          <input
-            class="form-check-input"
-            type="radio"
-            name="experience"
-            id="experience4"
-            [(ngModel)]="mentor.experience"
-            value="10+"
-          />
-          <label class="form-check-label" for="experience4"> 10+ </label>
+        <div class="form-group">
+          <label for="password" style="float: left">Industry</label>
+          <select name="industry" id="industry">
+            <option value="arts">Arts & Entertainment</option>
+            <option value="eng">Engineering</option>
+            <option value="health">Health Care and Medicine</option>
+            <option value="business">Business & Development</option>
+            <option value="finance">Financial Services</option>
+            <option value="science">Science & Technology</option>
+          </select>
         </div>
       </div>
-    </div>
-    <div class="col-md-2"></div>
-    <!-- Bottom div -->
-    <div class="col-md-12" style="text-align: center; margin-top: 50px">
-      <button type="button" (click)="submitMentor()" class="btn btn-primary">
-        Submit
-      </button>
-    </div>
-  </form>
-</div>
 
-<script>
-  function openApp(evt, appName) {
-    var i, tabcontent, tablinks;
+      <!-- Right div -->
+      <div class="col-md-4">
+        <div class="form-group">
+          <label for="lname" style="float: left">Last Name</label>
+          <input
+            required
+            type="text"
+            class="form-control"
+            [(ngModel)]="mentee.lname"
+            name="lname"
+            id="lname"
+            placeholder="Last"
+          />
+        </div>
+        <div class="form-group">
+          <label for="companyname" style="float: left"
+            >Areas for Mentoring Impact:</label
+          >
+          <input type="checkbox" id="area1" name="area1" value="one" />
+          <label for="area1">
+            Knowledge and Practice of Professional Etiquette</label
+          ><br />
+          <input type="checkbox" id="area2" name="area2" value="two" />
+          <label for="area2"> Focus and Practice on the Field of Career</label
+          ><br />
+          <input type="checkbox" id="area3" name="area3" value="three" />
+          <label for="area3"> Professional Network Expansion</label><br />
+          <input type="checkbox" id="area4" name="area4" value="four" />
+          <label for="area4"> Personality Development</label><br />
+          <input type="checkbox" id="area5" name="area5" value="five" />
+          <label for="area5"> Communication Skills Improvement</label><br />
+        </div>
+        <div class="form-group">
+          <label for="phone" style="float: left">Phone Number</label>
+          <input
+            type="text"
+            class="form-control"
+            [(ngModel)]="mentee.phone"
+            name="phone"
+            id="phone"
+            placeholder="Phone"
+          />
+        </div>
+      </div>
+      <div class="col-md-2"></div>
+      <!-- Bottom div -->
+      <div class="col-md-12" style="text-align: center; margin-top: 50px">
+        <button type="button" (click)="submitMentee()" class="btn btn-primary">
+          Submit
+        </button>
+      </div>
+    </form>
+  </div>
 
-    tabcontent = document.getElementsByClassName("tabcontent");
-    for (i = 0; i < tabcontent.length; i++) {
-      tabcontent[i].style.display = "none";
+  <div [hidden]="!isActive(2)" id="Mentor" class="tabcontent">
+    <h3>Mentor Application</h3>
+    <form class="form-group row fadeIn second" style="margin-top: 40px">
+      <div class="col-md-2"></div>
+      <!-- Left div -->
+      <div class="col-md-4">
+        <div class="form-group">
+          <label for="firstname" style="float: left">First Name</label>
+          <input
+            required
+            type="text"
+            class="form-control"
+            [(ngModel)]="mentor.fname"
+            name="fname"
+            id="fname"
+            placeholder="First"
+          />
+        </div>
+        <div class="form-group">
+          <label for="email" style="float: left">Email address</label>
+          <input
+            required
+            type="text"
+            class="form-control"
+            [(ngModel)]="mentor.email"
+            name="email"
+            id="email"
+            placeholder="name@example.com"
+          />
+        </div>
+        <div class="form-group">
+          <label for="position" style="float: left">Date of Birth</label>
+          <input
+            type="date"
+            class="form-control"
+            [(ngModel)]="mentor.birthday"
+            name="birthday"
+            id="birthday"
+          />
+        </div>
+        <div class="form-group">
+          <label for="password" style="float: left">Industry</label>
+          <select name="industry" id="industry">
+            <option value="arts">Arts & Entertainment</option>
+            <option value="eng">Engineering</option>
+            <option value="health">Health Care and Medicine</option>
+            <option value="business">Business & Development</option>
+            <option value="finance">Financial Services</option>
+            <option value="science">Science & Technology</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Right div -->
+      <div class="col-md-4">
+        <div class="form-group">
+          <label for="lname" style="float: left">Last Name</label>
+          <input
+            required
+            type="text"
+            class="form-control"
+            [(ngModel)]="mentor.lname"
+            name="lname"
+            id="lname"
+            placeholder="Last"
+          />
+        </div>
+        <div class="form-group">
+          <label for="companyname" style="float: left"
+            >Have you mentored before?</label
+          >
+          <label for="mentorexp1">Yes</label>
+          <input
+            type="radio"
+            value="yes"
+            class="form-check-input"
+            name="mentorexp"
+            id="mentorexp1"
+            [(ngModel)]="mentor.mentorexp"
+          />
+          <br />
+          <label for="mentorexp2">No</label>
+          <input
+            type="radio"
+            value="no"
+            class="form-check-input"
+            name="mentorexp"
+            id="mentorexp2"
+            [(ngModel)]="mentor.mentorexp"
+          />
+          <br />
+        </div>
+        <div class="form-group">
+          <label for="phone" style="float: left">Phone Number</label>
+          <input
+            type="text"
+            class="form-control"
+            [(ngModel)]="mentor.phone"
+            name="phone"
+            id="phone"
+            placeholder="Work Number"
+          />
+        </div>
+        <div style="float: left; text-align: left">
+          <label>How many years of experience do you have?</label>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="radio"
+              name="experience"
+              id="experience1"
+              [(ngModel)]="mentor.experience"
+              value="1-3"
+            />
+            <label class="form-check-label" for="experience1"> 1-3 </label>
+          </div>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="radio"
+              name="experience"
+              id="experience2"
+              [(ngModel)]="mentor.experience"
+              value="4-7"
+            />
+            <label class="form-check-label" for="experience2"> 4-7 </label>
+          </div>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="radio"
+              name="experience"
+              id="experience3"
+              [(ngModel)]="mentor.experience"
+              value="8-10"
+            />
+            <label class="form-check-label" for="experience3"> 8-10 </label>
+          </div>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="radio"
+              name="experience"
+              id="experience4"
+              [(ngModel)]="mentor.experience"
+              value="10+"
+            />
+            <label class="form-check-label" for="experience4"> 10+ </label>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-2"></div>
+      <!-- Bottom div -->
+      <div class="col-md-12" style="text-align: center; margin-top: 50px">
+        <button type="button" (click)="submitMentor()" class="btn btn-primary">
+          Submit
+        </button>
+      </div>
+    </form>
+  </div>
+
+  <!-- <script>
+    document.getElementById("default").click();
+
+    function openApp(evt, appName) {
+      var i, tabcontent, tablinks;
+
+      tabcontent = document.getElementsByClassName("tabcontent");
+      for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+      }
+
+      tablinks = document.getElementsByClassName("tablinks");
+      for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+      }
+
+      document.getElementById(appName).style.display = "block";
+      evt.currentTarget.className += " active";
     }
-
-    tablinks = document.getElementsByClassName("tablinks");
-    for (i = 0; i < tablinks.length; i++) {
-      tablinks[i].className = tablinks[i].className.replace(" active", "");
-    }
-
-    document.getElementById(appName).style.display = "block";
-    evt.currentTarget.className += " active";
-  }
-</script>
+  </script> -->
+</body>

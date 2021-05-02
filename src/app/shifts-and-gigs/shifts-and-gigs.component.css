@@ -1,38 +1,46 @@
+h1 {
+  font-family: "Darker Grotesque";
+}
+
+h2 {
+  font-family: "Alata";
+}
+
 .shifts_button {
-    width: 100px; 
-    height: 35px;
-    border: none;
-    background-color: darkgrey;
+  width: 100px;
+  height: 35px;
+  border: none;
+  background-color: darkgrey;
 }
 
 .shifts_button:hover {
-    background-color: lightgrey;
+  background-color: lightgrey;
 }
 
 .diverse-img {
-    display: none;
+  display: none;
 }
 
 .diversity-img {
-    display: none;
+  display: none;
 }
-  
+
 .msg {
-    display: none;
+  display: none;
 }
 
 .job-suggest {
-    padding: 4px 10px;
-    border: solid black 1px; 
-    border-radius: 18px; 
-    cursor: pointer;
-    color: black;
-    margin-left: 20px;
+  padding: 4px 10px;
+  border: solid black 1px;
+  border-radius: 18px;
+  cursor: pointer;
+  color: black;
+  margin-left: 20px;
 }
 
 .job-suggest:hover {
-    background-color: grey;
-    text-decoration: none;
-    color: white;
-    border-color: grey;
+  background-color: grey;
+  text-decoration: none;
+  color: white;
+  border-color: grey;
 }

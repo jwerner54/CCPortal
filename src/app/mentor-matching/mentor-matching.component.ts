@@ -8,6 +8,7 @@ import { AuthService } from '../auth/auth.service';
   styleUrls: ['./mentor-matching.component.css']
 })
 export class MentorMatchingComponent implements OnInit {
+  tab = 1;
 
   mentee = {
     fname: '',
@@ -30,6 +31,14 @@ export class MentorMatchingComponent implements OnInit {
   }
 
   constructor(private authService: AuthService, private router: Router) { }
+
+  isActive(tabId): boolean {
+    return this.tab === tabId;
+  }
+
+  openTab(tabId): void {
+    this.tab = tabId;
+  }
 
   submitMentee() {
   }
