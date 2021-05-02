@@ -1,4 +1,9 @@
 /* GLOBAL STYLES */
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
 
 /* Navbar */
 .navbar {

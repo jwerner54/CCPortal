@@ -1,6 +1,9 @@
 <div class="basic-page-div fadeInDown">
-  <h1 class="basic-page-title fadeIn first">Account</h1>
-  <button type="button" class="btn btn-primary logoutbtn" (click)="logout()">Logout</button>
+  <div style="float: left; width: 100%; text-align: center;">
+    <h1 class="basic-page-title fadeIn first" style="">Account</h1>
+    <button type="button" class="btn btn-primary logoutbtn" style="float: right;" (click)="logout()">Logout</button>
+    <!-- <h2 style="font-size: 20px; float: right; margin-top: 5px; margin-right: 20px;">Hello, <div id="name" style="display: inline;">{{this.getDisplayName()}}</div></h2> -->
+  </div>
 
   <form class="form-group row fadeIn second" style="margin-top: 40px;">
     <!-- Left div -->
@@ -43,7 +46,7 @@
           placeholder="Pronouns">
       </div>
 
-      <button type="button" [routerLink]="['/employer-dashboard']" class="btn btn-primary" style="float: left;">Save Changes</button>
+      <button type="button" onclick="updateDb()" class="btn btn-primary" style="float: left;">Save Changes</button>
     </div>
 
     <!-- Bottom div -->

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../auth/auth.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -21,7 +22,7 @@ export class EmployerSignupComponent implements OnInit {
     type: 'employer'
   }
 
-  constructor(private authService: AuthService) { }
+  constructor(private authService: AuthService, private router: Router) { }
 
   createUser() {
     var errors = false;
@@ -39,7 +40,8 @@ export class EmployerSignupComponent implements OnInit {
         if (!errors) {
           // self.showSuccess();
         }
-      })
+      });
+      this.router.navigate(['employer-dashboard']);
   }
 
   showError() {
