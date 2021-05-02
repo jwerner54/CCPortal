@@ -10,3 +10,14 @@ p {
   font-size: 24px;
   font-family: "Darker Grotesque";
 }
+
+.art-img {
+  position: relative;
+  text-align: center;
+}
+
+.article {
+  width: 65%;
+  height: auto;
+  object-fit: cover;
+}
