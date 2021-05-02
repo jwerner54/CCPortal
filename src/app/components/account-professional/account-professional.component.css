@@ -5,3 +5,10 @@
 input {
     color: black;
 }
+h1 {
+  font-family: "Darker Grotesque";
+}
+
+.logoutbtn {
+  cursor: pointer;
+}
