@@ -1,13 +1,19 @@
+h1 {
+  text-align: center;
+  color: black;
+  font-size: 56px;
+  font-family: "Bebas Neue";
+}
+
 .signup-div {
-    font-family: Arial,Helvetica,sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .signup-button {
-    height: 300px;
+  height: 300px;
 }
 
 .button-logo {
-    height: 45%;
-    width: auto;
+  height: 45%;
+  width: auto;
 }
-
