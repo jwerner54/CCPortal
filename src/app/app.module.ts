@@ -21,7 +21,7 @@ import { ForgotPasswordComponent } from './components/forgot-password/forgot-pas
 import { VerifyEmailComponent } from './components/verify-email/verify-email.component';
 import { ProfessionalDashboardComponent } from './components/professional-dashboard/professional-dashboard.component';
 import { EmployerDashboardComponent } from './components/employer-dashboard/employer-dashboard.component';
-import { MainSignupComponent } from './components/main-signup/main-signup.component';
+// import { MainSignupComponent } from './components/main-signup/main-signup.component';
 import { AccountProfessionalComponent } from './components/account-professional/account-professional.component';
 import { AccountEmployerComponent } from './components/account-employer/account-employer.component';
 import { ShiftsAndGigsComponent } from './components/shifts-and-gigs/shifts-and-gigs.component';
@@ -42,7 +42,7 @@ import { AboutUsComponent } from './components/about-us/about-us.component';
     VerifyEmailComponent,
     ProfessionalDashboardComponent,
     EmployerDashboardComponent,
-    MainSignupComponent,
+    // MainSignupComponent,
     AccountProfessionalComponent,
     AccountEmployerComponent,
     ShiftsAndGigsComponent,

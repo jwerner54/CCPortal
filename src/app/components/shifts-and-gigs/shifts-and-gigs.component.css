@@ -43,9 +43,9 @@ h1 {
     text-decoration: none;
     color: white;
     border-color: grey;
+    font-family: "Darker Grotesque";
   }
-  font-family: "Darker Grotesque";
-}
+  
 
 h2 {
   font-family: "Alata";
