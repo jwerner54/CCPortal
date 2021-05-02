@@ -12,7 +12,6 @@ import { ForgotPasswordComponent } from './components/forgot-password/forgot-pas
 import { VerifyEmailComponent } from './components/verify-email/verify-email.component';
 import { ProfessionalDashboardComponent } from './components/professional-dashboard/professional-dashboard.component';
 import { EmployerDashboardComponent } from './components/employer-dashboard/employer-dashboard.component';
-import { MainSignupComponent } from './components/main-signup/main-signup.component';
 import { AccountEmployerComponent } from './components/account-employer/account-employer.component';
 import { AccountProfessionalComponent } from './components/account-professional/account-professional.component';
 import { CommunityComponent } from './components/community/community.component';
@@ -36,7 +35,6 @@ const routes: Routes = [
   { path: 'employer-dashboard', component: EmployerDashboardComponent, canActivate: [AuthGuard] },  
   { path: 'forgot-password', component: ForgotPasswordComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'main-signup', component: MainSignupComponent },
   { path: 'manage-active-jobs', component: ManageActiveJobsComponent, canActivate: [AuthGuard] },  
   { path: 'mentor-matching', component: MentorMatchingComponent, canActivate: [AuthGuard] },  
   { path: 'professional-dashboard', component: ProfessionalDashboardComponent, canActivate: [AuthGuard] },  
