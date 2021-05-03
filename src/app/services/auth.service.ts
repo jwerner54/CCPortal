@@ -299,6 +299,11 @@ export class AuthService {
             Lname: lname,
             Pronouns: pronouns
           });
+          const profMentorRef = this.db.object("ProfessionalUsers/" + result.user.uid + "/MentorApplication");
+          profMentorRef.set({
+            Applied: false
+          });
+
           //store resume file in firebase storage
           // this.saveFile(filename, file, id);
 

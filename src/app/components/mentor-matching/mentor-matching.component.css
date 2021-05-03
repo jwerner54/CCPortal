@@ -38,3 +38,11 @@
   .tablinks {
     float: none !important;
   }
+
+  .error {
+    color: red;
+    font-size: 15px;
+    margin: 20px 0px;
+    display: none;
+    text-align: center;
+  }

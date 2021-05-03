@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { AuthService } from '../../services/auth.service';
+import { AuthService } from "../../services/auth.service";
+import { AngularFireDatabase } from '@angular/fire/database';
+import * as firebase from 'firebase';
+import { exists } from 'node:fs';
 
 @Component({
   selector: 'app-mentor-matching',
@@ -16,7 +18,9 @@ export class MentorMatchingComponent implements OnInit {
     email: '',
     birthday: '',
     phone: '',
-    type: 'mentee'
+    type: 'mentee',
+    industry: '',
+    areasofimpact: []
   }
 
   mentor = {
@@ -24,15 +28,16 @@ export class MentorMatchingComponent implements OnInit {
     lname: '',
     email: '',
     birthday: '',
-    mentorexp: '',
     experience: '',
+    mentorexp: '',
     phone: '',
+    industry: '',
     type: 'mentor'
   }
 
   constructor(
     private authService: AuthService,
-    private router: Router
+    public db: AngularFireDatabase
   ) { }
 
   isActive(tabId): boolean {
@@ -45,19 +50,57 @@ export class MentorMatchingComponent implements OnInit {
       document.getElementById("btn1").classList.add("active");
       document.getElementById("Mentor").style.display = "none";
       document.getElementById("btn2").classList.remove("active");
+      document.getElementById("alreadyApplied").style.display = "none";
 
     } else {
       document.getElementById("Mentee").style.display = "none";
       document.getElementById("btn1").classList.remove("active");
       document.getElementById("Mentor").style.display = "block";
       document.getElementById("btn2").classList.add("active");
+      document.getElementById("alreadyAppliedMentor").style.display = "none";
     }
   }
 
   submitMentee() {
+    firebase.default.database().ref("ProfessionalUsers/" + this.authService.userData.uid + "/MentorApplication").once('value', (snapshot) => {
+      snapshot.forEach(child => {
+        if (child.key == "Applied" && child.val() == false) {
+          const mentorRef = this.db.object("ProfessionalUsers/" + this.authService.userData.uid + "/MentorApplication");
+          mentorRef.set({
+            Birthday: this.mentee.birthday,
+            Phone: this.mentee.phone,
+            Industry: this.mentee.industry,
+            Applied: true
+          });
+          document.getElementById("formsDiv").style.display = "none";
+          document.getElementById("successMsg").style.display = "block";
+        } else {
+          document.getElementById("alreadyApplied").style.display = "block";
+        }
+      });
+    });
   }
 
   submitMentor() {
+    firebase.default.database().ref("ProfessionalUsers/" + this.authService.userData.uid + "/MentorApplication").once('value', (snapshot) => {
+      snapshot.forEach(child => {
+        if (child.key == "Applied" && child.val() == false) {
+          const mentorRef = this.db.object("ProfessionalUsers/" + this.authService.userData.uid + "/MentorApplication");
+          mentorRef.set({
+            Birthday: this.mentor.birthday,
+            Phone: this.mentor.phone,
+            Industry: this.mentor.industry,
+            Applied: true,
+            Experience: this.mentor.experience,
+            MentoredBefore: this.mentor.mentorexp
+          });
+          document.getElementById("formsDiv").style.display = "none";
+          document.getElementById("successMsg").style.display = "block";
+        } else {
+          document.getElementById("alreadyAppliedMentor").style.display = "block";
+        }
+      });
+    });
   }
 
   ngOnInit() {
