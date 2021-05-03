@@ -91,3 +91,8 @@ h2 {
   color: white;
   border-color: grey;
 }
+
+.job-container {
+  height: 300px;
+  padding-top: 20px;
+}
