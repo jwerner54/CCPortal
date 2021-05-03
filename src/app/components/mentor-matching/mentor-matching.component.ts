@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from "../../services/auth.service";
 import { AngularFireDatabase } from '@angular/fire/database';
 import * as firebase from 'firebase';
-import { exists } from 'node:fs';
 
 @Component({
   selector: 'app-mentor-matching',
