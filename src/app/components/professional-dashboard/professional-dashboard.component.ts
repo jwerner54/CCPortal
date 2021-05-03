@@ -15,4 +15,9 @@ export class ProfessionalDashboardComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  goMenteeMatching() {
+    this.authService.mentorTab = 1;
+    this.authService.router.navigate(["/mentor-matching"]);
+  }
+
 }

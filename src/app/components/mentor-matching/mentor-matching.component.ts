@@ -9,7 +9,6 @@ import * as firebase from 'firebase';
   styleUrls: ['./mentor-matching.component.css']
 })
 export class MentorMatchingComponent implements OnInit {
-  tab = 1;
 
   mentee = {
     fname: '',
@@ -40,7 +39,7 @@ export class MentorMatchingComponent implements OnInit {
   ) { }
 
   isActive(tabId): boolean {
-    return this.tab === tabId;
+    return this.authService.mentorTab === tabId;
   }
 
   openTab(tabId): void {
@@ -102,8 +101,12 @@ export class MentorMatchingComponent implements OnInit {
     });
   }
 
-  ngOnInit() {
-    document.getElementById("Mentee").style.display = "block";
+  ngOnInit(): void {
+    if (this.authService.mentorTab == 1) {
+      document.getElementById("Mentee").style.display = "block";
+    } else {
+      document.getElementById("Mentor").style.display = "block";
+    }
   }
 
 }

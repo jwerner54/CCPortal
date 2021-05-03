@@ -20,6 +20,7 @@ export class AuthService {
   professionalslDb: Observable<any>;
   employersDb: Observable<any>;
   job: Job;
+  mentorTab: any;
   // userType: String;
 
   constructor(
