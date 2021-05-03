@@ -1,0 +1,39 @@
+<div class="job-page-div col-md-12 fadeInDown">
+    <h1 class="fadeIn first">{{(authService.job.position)}}</h1>
+    <h3 class="fadeIn first">{{(authService.job.company)}}</h3>
+    <h3 class="location-text fadeIn first">{{(authService.job.location)}}</h3>
+
+    <div class="job-info-div fadeIn first">
+        <div class="row description-row">
+            <h2>Description:</h2>
+            <p class="description-text">{{(authService.job.description)}}</p>
+        </div>
+        <div class="row info-row">
+            <h2>Preferred Experience:</h2>
+            <p>{{(authService.job.experience)}} years</p>
+        </div>
+        <div class="row info-row">
+            <h2>Contact Information:</h2>
+            <p>{{(authService.job.contact)}}</p>
+        </div>
+        <div class="divider-line"></div>
+        <div class="row info-row">
+            <h2 class="about-title">About {{(CompanyName)}}</h2>
+            <div class="about-col">
+                <h4>Employees</h4>
+                <h3 class="about-title-info">{{(CompanySize)}}</h3>
+            </div>
+            <div class="about-col">
+                <h4>Industry</h4>
+                <h3 class="about-title-info">{{(Industry)}}</h3>
+            </div>
+            <div class="about-col">
+                <h4>Headquarters</h4>
+                <h3 class="about-title-info">{{(Headquarters)}}</h3>
+            </div>
+
+            <p class="about-description">{{(CompanyDescription)}}</p>
+        </div>
+    </div>
+
+</div>

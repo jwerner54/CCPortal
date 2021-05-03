@@ -21,6 +21,7 @@ import { BrowseProfessionalsComponent } from './components/browse-professionals/
 import { CreateJobPostComponent } from './components/create-job-post/create-job-post.component';
 import { ManageActiveJobsComponent } from './components/manage-active-jobs/manage-active-jobs.component';
 import { AboutUsComponent } from './components/about-us/about-us.component';
+import { JobViewComponent } from './components/job-view/job-view.component';
 
 
 const routes: Routes = [  
@@ -34,6 +35,7 @@ const routes: Routes = [
   { path: 'create-job-post', component: CreateJobPostComponent, canActivate: [AuthGuard] },  
   { path: 'employer-dashboard', component: EmployerDashboardComponent, canActivate: [AuthGuard] },  
   { path: 'forgot-password', component: ForgotPasswordComponent },
+  { path: 'job-view', component: JobViewComponent, canActivate: [AuthGuard] },  
   { path: 'login', component: LoginComponent },
   { path: 'manage-active-jobs', component: ManageActiveJobsComponent, canActivate: [AuthGuard] },  
   { path: 'mentor-matching', component: MentorMatchingComponent, canActivate: [AuthGuard] },  

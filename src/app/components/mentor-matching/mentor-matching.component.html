@@ -1,10 +1,10 @@
 <body>
     <h1 class="mentor-title">Mentor Matching</h1>
     <div class="tab">
-        <button class="tablinks" [ngClass]="{ active: isActive(1) }" (click)="openTab(1)">
+        <button id="btn1" class="tablinks" [ngClass]="{ active: isActive(1) }" (click)="openTab(1)">
             Mentee Application
         </button>
-        <button class="tablinks" [ngClass]="{ active: isActive(2) }" (click)="openTab(2)">
+        <button id="btn2" class="tablinks" [ngClass]="{ active: isActive(2) }" (click)="openTab(2)">
             Mentor Application
         </button>
         <!-- <button class="tablinks" onclick="openApp(event, 'Mentee')" id="default">
@@ -16,9 +16,9 @@
     </div>
 
     <!-- Tab content -->
-    <div [hidden]="!isActive(1)" id="Mentee" class="tabcontent">
-        <h3>Mentee Application</h3>
-        <form class="form-group row fadeIn second" style="margin-top: 40px">
+    <div id="Mentee" class="tabcontent fadeInDown">
+        <h3 style="text-align: center;" class="fadeIn first">Mentee Application</h3>
+        <form class="form-group row fadeIn first" style="margin-top: 40px">
             <div class="col-md-2"></div>
             <!-- Left div -->
             <div class="col-md-4">
@@ -87,8 +87,8 @@
         </form>
     </div>
 
-    <div [hidden]="!isActive(2)" id="Mentor" class="tabcontent">
-        <h3>Mentor Application</h3>
+    <div id="Mentor" class="tabcontent fadeInDown">
+        <h3 style="text-align: center;" class="fadeIn first">Mentor Application</h3>
         <form class="form-group row fadeIn second" style="margin-top: 40px">
             <div class="col-md-2"></div>
             <!-- Left div -->

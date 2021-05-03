@@ -30,14 +30,28 @@ export class MentorMatchingComponent implements OnInit {
     type: 'mentor'
   }
 
-  constructor(private authService: AuthService, private router: Router) { }
+  constructor(
+    private authService: AuthService,
+    private router: Router
+  ) { }
 
   isActive(tabId): boolean {
     return this.tab === tabId;
   }
 
   openTab(tabId): void {
-    this.tab = tabId;
+    if (tabId == 1) {
+      document.getElementById("Mentee").style.display = "block";
+      document.getElementById("btn1").classList.add("active");
+      document.getElementById("Mentor").style.display = "none";
+      document.getElementById("btn2").classList.remove("active");
+
+    } else {
+      document.getElementById("Mentee").style.display = "none";
+      document.getElementById("btn1").classList.remove("active");
+      document.getElementById("Mentor").style.display = "block";
+      document.getElementById("btn2").classList.add("active");
+    }
   }
 
   submitMentee() {
@@ -47,6 +61,7 @@ export class MentorMatchingComponent implements OnInit {
   }
 
   ngOnInit() {
+    document.getElementById("Mentee").style.display = "block";
   }
 
 }

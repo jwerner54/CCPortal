@@ -9,6 +9,7 @@ import * as firebase from 'firebase';
 import { Observable } from 'rxjs';
 import { FileService } from '../services/file.service';
 import { finalize } from 'rxjs/operators';
+import { Job } from '../services/job';
 
 @Injectable({
   providedIn: 'root'
@@ -18,11 +19,12 @@ export class AuthService {
   userData: any;
   professionalslDb: Observable<any>;
   employersDb: Observable<any>;
+  job: Job;
   // userType: String;
 
   constructor(
     public db: AngularFireDatabase,   // Inject Firebase Realtime Database service
-    public storage: AngularFireStorage, 
+    public storage: AngularFireStorage,
     public afAuth: AngularFireAuth, // Inject Firebase auth service
     public router: Router,
     public ngZone: NgZone // NgZone service to remove outside scope warning
@@ -39,9 +41,31 @@ export class AuthService {
         JSON.parse(localStorage.getItem('user'));
       }
     });
-    
+
     this.professionalslDb = db.object('ProfessionalUsers').valueChanges();
     this.employersDb = db.object('EmployerUsers').valueChanges();
+  }
+
+  viewJobPage(jobUid) {
+    this.job = new Job;
+    firebase.default.database().ref("JobListings/").once('value', (snapshot) => {
+      snapshot.forEach(child => {
+        if (child.key == jobUid) {
+          this.job.position = child.val().Position;
+          this.job.description = child.val().Description;
+          this.job.experience = child.val().Experience;
+          this.job.location = child.val().Location;
+          this.job.contact = child.val().Contact;
+          this.job.company = child.val().Company;
+          this.job.uid = child.key;
+          this.job.employerid = child.val().EmployerID;
+        }
+      });
+    }).then(() => {
+      localStorage.setItem('job', JSON.stringify(this.job));
+      JSON.parse(localStorage.getItem('job'));
+      this.router.navigate(['job-view']);
+    });
   }
 
 
@@ -49,7 +73,7 @@ export class AuthService {
   sign up with username/password and sign in with social auth  
   provider in Firebase Realtime Database */
   SetUserData(user) {
-    
+
   }
 
   // Send email verfificaiton when new user sign up
@@ -91,7 +115,7 @@ export class AuthService {
           this.ngZone.run(() => {
             //check if the user is a professional or an employer
             firebase.default.database().ref('EmployerUsers/' + result.user.uid).once("value", snapshotChanges => {
-              if(snapshotChanges.exists()) {
+              if (snapshotChanges.exists()) {
                 this.navigateEmployer();
               } else {
                 this.navigateProfessional();
@@ -100,12 +124,14 @@ export class AuthService {
           });
         }
       }).catch((error) => {
-        //TODO: add too many login attempts error message
         if (error.code == "auth/user-not-found" || error.code == "auth/invalid-email") {
           document.getElementById("noEmail").style.display = "block";
         }
         if (error.code == "auth/wrong-password") {
           document.getElementById("wrongPassword").style.display = "block";
+        }
+        if (error.code == "auth/too-many-requests") {
+          document.getElementById("tooManyRequests").style.display = "block";
         }
       });
   }
@@ -123,7 +149,7 @@ export class AuthService {
   }
 
   // Sign up with email/password
-  SignUpEmployer(email, password, fname, lname, companyname, position, phone, companysize) {
+  SignUpEmployer(email, password, fname, lname, companyname, position, phone, companysize, industry, headquarters, companydescription) {
     document.getElementById("emailExists").style.display = "none";
     document.getElementById("invalidEmail").style.display = "none";
     document.getElementById("weakPassword").style.display = "none";
@@ -153,7 +179,10 @@ export class AuthService {
             Company: companyname,
             CompanySize: companysize,
             Position: position,
-            Phone: phone
+            Phone: phone,
+            Industry: industry,
+            Headquarters: headquarters,
+            CompanyDescription: companydescription
           });
 
           this.SendVerificationMail();
@@ -253,7 +282,7 @@ export class AuthService {
   //   ).subscribe();
   // }
 
-  viewFile(){
+  viewFile() {
     // this.fileService.getFile(this.file);
     console.log("viewFile ran");
   }
@@ -279,20 +308,6 @@ export class AuthService {
   get isLoggedIn(): boolean {
     const user = JSON.parse(localStorage.getItem('user'));
     return (user !== null && user.emailVerified !== false) ? true : false;
-  }
-
-  // Auth logic to run auth providers
-  AuthLogin(provider) {
-    return this.afAuth.signInWithPopup(provider)
-      .then((result) => {
-        this.ngZone.run(() => {
-          //TODO: add logic to go to either professional or employer dashboard
-          this.router.navigate(['professional-dashboard']);
-        })
-        this.SetUserData(result.user);
-      }).catch((error) => {
-        window.alert(error)
-      })
   }
 
   // Sign out 

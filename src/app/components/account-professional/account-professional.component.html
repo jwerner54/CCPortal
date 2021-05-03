@@ -43,12 +43,13 @@
           <input type="text" class="form-control"  name="password" id="password" placeholder="" #newPassword>
           <p style="font-size: 12px; color: grey;">If you change your password, you will be logged out and will have to log back in.</p>
         </div>
-  
+        
+        <p style="margin: 20px 0px 20px 0px; font-size: 15px; display: none;" id="updateSuccess">Account successfully updated!</p>
         <button type="button" (click)="updateUser(newFname.value, newLname.value, newPronouns.value, newPassword.value)" class="btn btn-primary" style="float: left;">Save Changes</button>
       </div>
 
-      <div class="col-md-6" style="margin: auto; display: none;" id="updateSuccess">
+      <!-- <div class="col-md-6" style="margin: auto; display: none;" id="updateSuccess">
         <p style="margin: 100px auto 0px auto; font-size: 25px;">Account successfully updated!</p>
-      </div>
+      </div> -->
     </form>
   </div>

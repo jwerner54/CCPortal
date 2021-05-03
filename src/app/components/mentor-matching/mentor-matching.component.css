@@ -7,6 +7,8 @@
   
   .tab {
     overflow: hidden;
+    margin-bottom: auto;
+    text-align: center;
   }
   
   .tab button {
@@ -31,4 +33,8 @@
     display: none;
     padding: 6px 12px;
     border-top: none;
+  }
+
+  .tablinks {
+    float: none !important;
   }

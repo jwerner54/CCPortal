@@ -11,6 +11,7 @@ h1 {
     height: 35px;
     border: none;
     background-color: darkgrey;
+    margin-bottom: 20px;
   }
   
   .shifts_button:hover {

@@ -33,3 +33,7 @@ h1 {
 .msg {
   display: none;
 }
+
+.textarea-description {
+  height: 200px;
+}

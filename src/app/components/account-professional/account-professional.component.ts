@@ -17,7 +17,7 @@ export class AccountProfessionalComponent implements OnInit {
 
   constructor(
     public authService: AuthService,
-    public db: AngularFireDatabase,
+    public db: AngularFireDatabase
   ) {
     //get values already in database for user
     firebase.default.database().ref("ProfessionalUsers/").once('value', (snapshot) => {
@@ -37,15 +37,14 @@ export class AccountProfessionalComponent implements OnInit {
   }
 
   updateUser(fname, lname, pronouns, password) {
+    document.getElementById("updateSuccess").style.display = "none";
     const profRef = this.db.object("ProfessionalUsers/" + this.authService.userData.uid);
     var errorBool = false;
-    var passwordChange = false;
 
     if (password != "") {
       firebase.default.auth().currentUser.updatePassword(password).then(() => {
         //update successful
-        passwordChange = true;
-      }, (error) => {
+      }).catch((error) => {
         errorBool = true;
         if (error.code == "auth/requires-recent-login") {
           document.getElementById("needRecentLogin").style.display = "block";
@@ -90,13 +89,12 @@ export class AccountProfessionalComponent implements OnInit {
           Pronouns: pronouns
         });
       }
-    }
+      // document.getElementById("updateForm").style.display = "none";
+      document.getElementById("updateSuccess").style.display = "block";
 
-    document.getElementById("updateForm").style.display = "none";
-    document.getElementById("updateSuccess").style.display = "block";
-
-    if (passwordChange) {
-      this.authService.SignOut();
+      if (password != "") {
+        this.authService.SignOut();
+      }
     }
   }
 

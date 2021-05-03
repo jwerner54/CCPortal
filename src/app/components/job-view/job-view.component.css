@@ -1,0 +1,92 @@
+.job-page-div {
+    text-align: center;
+    margin-top: 20px;
+}
+
+h1 {
+    font-family: "Darker Grotesque";
+    font-size: 60px;
+    color: rgb(22, 168, 239);
+    text-align: center;
+}
+
+h2 {
+    font-size: 23px;
+    margin-bottom: 0px;
+    height: 35px;
+    width: 100%;
+    text-align: left;
+    font-weight: bold;
+}
+
+h3 {
+    font-size: 25px;
+}
+
+p{
+    font-weight: normal;
+    font-size: 17px;
+}
+
+.info-row {
+    width: 100%;
+    margin: 10px 0px 0px 20px;
+}
+
+.description-row {
+    width: 100%;
+    margin: 10px 0px 0px 20px;
+}
+
+.job-info-div {
+    /* border: solid;
+    border-width: 1px;
+    border-color: black; */
+    width: 65%;
+    margin: auto;
+    border-radius: 20px;
+    outline: none;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-bottom: 80px;
+}
+
+.location-text {
+    font-size: 17px;
+    margin-top: -8px;
+}
+
+h4 {
+    font-weight: normal;
+    font-size: 18px;
+}
+
+.divider-line {
+    width: 100%;
+    height: 1px;
+    background-color: lightgrey;
+    margin: 30px 0px 30px 0px;
+}
+
+.about-description {
+    margin-top: 20px;
+    text-align: left;
+}
+
+.about-col {
+    width: 33%;
+    text-align: center;
+
+}
+
+.about-title {
+    margin-bottom: 15px;
+}
+
+.about-title-info {
+    font-size: 18px;
+}
+
+.description-text {
+    text-align: left;
+}

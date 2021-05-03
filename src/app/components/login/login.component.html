@@ -8,6 +8,8 @@
       <div class="error" id="noEmail">Error: user not found</div>
       <div class="error" id="wrongPassword">Error: incorrect password</div>
       <div class="error" id="notVerified">Error: please verify email before logging in</div>
+      <div class="error" id="tooManyRequests">Error: too many incorrect attempts, either reset your pasword or wait before trying again</div>
+
     </div>
 
     <!-- Login Form -->
@@ -18,13 +20,13 @@
     </form>
 
     <!-- Sign Up -->
-    <div class="row">
-      <div id="formFooter" class="" style="margin-left: 15px; width: 50%;">
+    <div class="row" style="width: 100%; margin: 0px;">
+      <!-- <div id="formFooter" class="" style="margin-left: 15px; width: 50%;">
         <a class="underlineHover" routerLink="/main-signup" style="text-decoration: none;">Sign Up</a>
-      </div>
+      </div> -->
 
       <!-- Reset Password -->
-      <div id="formFooter" class="" style="width: 43.6%;">
+      <div id="formFooter" class="" style="width: 100%;">
         <a class="underlineHover" routerLink="/forgot-password" style="text-decoration: none;">Forgot Password?</a>
       </div>
     </div>
