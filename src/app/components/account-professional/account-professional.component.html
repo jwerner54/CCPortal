@@ -4,6 +4,9 @@
       <div id="needRecentLogin">
         <p style="color: red; font-size: 15px; margin: 20px 0px 20px 0px; display: none;">Error: changing your password is a sensitive operation, you must have recently logged in to change it</p>
       </div>
+      <div id="needRecentLoginDelete">
+        <p style="color: red; font-size: 15px; margin: 20px 0px 20px 0px; display: none;">Error: deleting your account is a sensitive operation, you need to have recently logged in to delete it</p>
+      </div>
       <div id="reLogin">
         <p style="color: red; font-size: 15px; margin: 20px 0px 20px 0px; display: none;">Error: please log out and log back in to make account changes</p>
       </div>
@@ -45,7 +48,10 @@
         </div>
         
         <p style="margin: 20px 0px 20px 0px; font-size: 15px; display: none;" id="updateSuccess">Account successfully updated!</p>
+        <p style="font-size: 15px; margin: 20px auto 20px auto; display: none;" id="deleteConfirmMsg">Are you sure you want to delete your account? This action cannot be undone.</p>
         <button type="button" (click)="updateUser(newFname.value, newLname.value, newPronouns.value, newPassword.value)" class="btn btn-primary" style="float: left;">Save Changes</button>
+        <button type="button" (click)="deleteConfirm()" id="deleteConfirmBtn" class="btn btn-primary btn-delete" style="float: left; margin-left: 20px;">Delete Account</button>
+        <button type="button" (click)="deleteUser()" id="deleteBtn" class="btn btn-primary btn-delete" style="float: left; margin-left: 20px; display: none;">Yes, delete my account</button>
       </div>
 
       <!-- <div class="col-md-6" style="margin: auto; display: none;" id="updateSuccess">

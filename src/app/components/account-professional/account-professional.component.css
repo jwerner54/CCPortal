@@ -12,3 +12,13 @@ input {
 h1 {
   font-family: "Darker Grotesque";
 }
+
+.btn-delete {
+  background-color: red;
+  outline-color: red;
+  border-color: red;
+}
+
+.btn-delete:hover {
+  opacity: 0.6;
+}

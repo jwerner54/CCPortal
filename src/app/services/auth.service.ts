@@ -103,6 +103,20 @@ export class AuthService {
     });
   }
 
+  deleteProfessional() {
+    const profRef = this.db.object("ProfessionalUsers/" + this.userData.uid);
+    profRef.remove().then(() => {
+      firebase.default.auth().currentUser.delete().then(() => {
+        localStorage.removeItem('user');
+        this.router.navigate(['login']);
+      }).catch((error) => {
+        if(error.code == "auth/requires-recent-login") {
+          document.getElementById("needRecentLoginDelete").style.display = "block";
+        }
+      });
+    });
+  }
+
 
   /* Setting up user data when sign in with username/password, 
   sign up with username/password and sign in with social auth  
