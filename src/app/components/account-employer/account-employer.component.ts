@@ -138,4 +138,17 @@ export class AccountEmployerComponent implements OnInit {
       }
     }
   }
+
+  deleteConfirm() {
+    document.getElementById("deleteBtn").style.display = "inline-block";
+    document.getElementById("deleteConfirmBtn").style.display = "none";
+    document.getElementById("deleteConfirmMsg").style.display = "block";
+
+  }
+
+  deleteUser() {
+    this.authService.deleteEmployer();
+  }
+
+
 }

@@ -24,7 +24,6 @@ export class ShiftsAndGigsComponent implements OnInit {
         var job = new Job(); 
         job.position = child.val().Position;
         job.description = child.val().Description;
-        job.skills = child.val().Skills;
         job.experience = child.val().Experience;
         job.location = child.val().Location;
         job.contact = child.val().Contact;

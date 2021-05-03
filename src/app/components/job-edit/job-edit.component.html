@@ -1,0 +1,65 @@
+<div class="basic-page-div fadeInDown">
+    <h1 class="basic-page-title fadeIn first">Job Posting</h1>
+    <a style="width: 100%;" class="fadeIn first">
+        <button type="button" class="btn btn-primary logoutbtn" style="float: right;"
+            routerLink="/manage-active-jobs">Return to Active Jobs</button>
+    </a>
+    <p style="font-size: 20px; margin: 90px auto 20px auto; display: none;" id="deleteSuccess">Job post has been deleted
+    </p>
+
+
+    <div class="form-group row" style="margin-top: 90px" id="postForm">
+        <div class="col-md-2"></div>
+        <!-- Left div -->
+        <div class="col-md-4">
+            <div class="form-group fadeIn first">
+                <label for="position" style="float: left">Job position *</label>
+                <input type="text" class="form-control" name="position" id="position"
+                    placeholder="{{(authService.job.position)}}" #newPosition />
+            </div>
+            <div class="form-group fadeIn second">
+                <label for="description" style="float: left">Job description *</label>
+                <textarea required type="text" class="form-control" name="description" id="description"
+                    value="{{(authService.job.description)}}" #newDescription></textarea>
+            </div>
+        </div>
+
+        <!-- Right div -->
+        <div class="col-md-4">
+            <div class="form-group fadeIn first">
+                <label for="lname" style="float: left">Preferred years of experience</label>
+                <input type="text" class="form-control" name="experience" id="experience"
+                    placeholder="{{(authService.job.experience)}}" #newExperience />
+            </div>
+            <div class="form-group fadeIn second">
+                <label for="pronouns" style="float: left">Location</label>
+                <input type="text" class="form-control" name="location" id="location"
+                    placeholder="{{(authService.job.location)}}" #newLocation />
+            </div>
+            <div class="form-group fadeIn third">
+                <label for="password" style="float: left">Contact information: </label>
+                <input required type="url" class="form-control" name="password" id="password"
+                    placeholder="{{(authService.job.contact)}}" #newContact />
+            </div>
+        </div>
+        <div class="col-md-2"></div>
+        <div class="col-md-12 fadeIn third" style="text-align: center; margin-top: 50px">
+            <p style="font-size: 20px; margin: 20px auto 20px auto; display: none;" id="successMsg">Job successfully
+                updated!</p>
+            <p style="font-size: 20px; margin: 20px auto 20px auto; display: none;" id="deleteConfirm">Are you sure you
+                want to delete this job post?</p>
+            <button type="button" class="btn btn-primary"
+                (click)="editJobPost(newPosition.value, newDescription.value, newExperience.value, newLocation.value, newContact.value)">
+                Update Job Post
+            </button>
+            <button type="button" id="deleteBtn" style="margin-left: 10px;" class="btn btn-primary btn-delete"
+                (click)="confirmDelete()">
+                Delete Job Post
+            </button>
+            <button type="button" id="confirmDeleteBtn" style="margin-left: 10px; display: none;"
+                class="btn btn-primary btn-delete" (click)="deleteJobPost()">
+                Yes, Delete This Job Post
+            </button>
+        </div>
+    </div>
+</div>

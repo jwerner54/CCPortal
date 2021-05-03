@@ -1,3 +1,45 @@
 <div class="basic-page-div fadeInDown">
     <h1 class="basic-page-title fadeIn first">Active Jobs</h1>
+
+    <div class="row fadeIn first">
+
+
+        <div class="col-md-4" style="margin-bottom: 1em" *ngFor="let job of jobs">
+            <div class="container" style="border: solid black 1px">
+                <div class="row">
+                    <!-- <img id="logo" style="margin: 10px 0 0 10px; width: 50px; height: 50px" src="assets/G.png" /> -->
+                    <h3 style="display: inline; margin: 15px auto 0px auto;" id="name">
+                        {{(job.position)}}
+                    </h3>
+                </div>
+
+                <div class="row" style="margin-top: 10px">
+                    <p class="" style="margin: auto">{{(job.experience)}} Years Experience Required</p>
+                </div>
+
+                <div class="row" style="margin-top: 10px">
+                    <div style="margin: auto">
+                        <img src="assets/fcc57757270fbcacb3ec70a4ec384d26.jpg" id="locationIcon"
+                            style="display: inline; height: 20px; width: 20px" />
+                        <p style="display: inline; margin-left: 5px" id="location">
+                            {{(job.location)}}
+                        </p>
+                    </div>
+                </div>
+
+                <div class="row" style="margin-top: 20px">
+                    <div style="margin: auto">
+                        <button class="shifts_button" (click)="editGig(job.uid)">Edit Job Post</button>
+                        <!-- <button class="shifts_button" style="margin-left: 10px">Apply</button> -->
+                    </div>
+                </div>
+
+                <!-- <p class="row" style="margin-top: 20px; margin-left: 4px">
+              6 days ago
+            </p> -->
+            </div>
+        </div>
+
+
     </div>
+</div>

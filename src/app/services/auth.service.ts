@@ -68,12 +68,66 @@ export class AuthService {
     });
   }
 
+  deleteEmployer() {
+    var jobIds = [""];
+    var index = 0;
+    const empRef = this.db.object("EmployerUsers/" + this.userData.uid);
+    firebase.default.database().ref("EmployerUsers/" + this.userData.uid + "/JobPosts").once('value', (snapshot) => {
+      snapshot.forEach(child => {
+        if (index == 0) {
+          jobIds[0] = child.key;
+          index = index + 1;
+        } else {
+          jobIds.push(child.key);
+        }
+      });
+    }).then(() => {
+      firebase.default.database().ref("JobListings/").once('value', (snapshot) => {
+        snapshot.forEach(child => {
+          if (jobIds.indexOf(child.key) != -1) {
+            child.ref.remove();
+          }
+        });
+      }).then(() => {
+        empRef.remove().then(() => {
+          firebase.default.auth().currentUser.delete().then(() => {
+            localStorage.removeItem('user');
+            this.router.navigate(['login']);
+          }).catch((error) => {
+            if(error.code == "auth/requires-recent-login") {
+              document.getElementById("needRecentLoginDelete").style.display = "block";
+            }
+          });
+        });
+      });
+    });
+  }
+
 
   /* Setting up user data when sign in with username/password, 
   sign up with username/password and sign in with social auth  
   provider in Firebase Realtime Database */
   SetUserData(user) {
 
+  }
+
+  SetJob(jobUid) {
+    this.job = new Job;
+    firebase.default.database().ref("JobListings/").once('value', (snapshot) => {
+      snapshot.forEach(child => {
+        if (child.key == jobUid) {
+          this.job.position = child.val().Position;
+          this.job.description = child.val().Description;
+          this.job.experience = child.val().Experience;
+          this.job.location = child.val().Location;
+          this.job.contact = child.val().Contact;
+          this.job.company = child.val().Company;
+          this.job.uid = child.key;
+          this.job.employerid = child.val().EmployerID;
+        }
+      });
+    }).then(() => {
+    });
   }
 
   // Send email verfificaiton when new user sign up

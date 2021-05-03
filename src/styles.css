@@ -161,9 +161,9 @@
   }
   
   .fadeIn.first {
-    -webkit-animation-delay: 0.4s;
-    -moz-animation-delay: 0.4s;
-    animation-delay: 0.4s;
+    -webkit-animation-delay: 0.2s;
+    -moz-animation-delay: 0.2s;
+    animation-delay: 0.2s;
   }
   
   .fadeIn.second {
@@ -183,6 +183,7 @@
     -moz-animation-delay: 1s;
     animation-delay: 1s;
   }
+
   
   /* Info:
   Blue color: rgb(22, 168, 239)

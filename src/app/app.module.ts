@@ -31,6 +31,7 @@ import { ManageActiveJobsComponent } from './components/manage-active-jobs/manag
 import { BrowseProfessionalsComponent } from './components/browse-professionals/browse-professionals.component';
 import { AboutUsComponent } from './components/about-us/about-us.component';
 import { JobViewComponent } from './components/job-view/job-view.component';
+import { JobEditComponent } from './components/job-edit/job-edit.component';
 
 @NgModule({
   declarations: [
@@ -52,6 +53,7 @@ import { JobViewComponent } from './components/job-view/job-view.component';
     BrowseProfessionalsComponent,
     AboutUsComponent,
     JobViewComponent,
+    JobEditComponent,
   ],
   imports: [
     BrowserModule,

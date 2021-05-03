@@ -2,13 +2,13 @@
     cursor: pointer;
 }
 
+.logoutbtn:hover {
+  opacity: 0.7;
+}
+
 input {
     color: black;
 }
 h1 {
   font-family: "Darker Grotesque";
-}
-
-.logoutbtn {
-  cursor: pointer;
 }

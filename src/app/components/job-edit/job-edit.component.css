@@ -1,0 +1,13 @@
+textarea {
+    height: 200px;
+}
+
+.btn-delete {
+    background-color: red;
+    outline-color: red;
+    border-color: red;
+}
+
+.btn-delete:hover {
+    opacity: 0.6;
+}

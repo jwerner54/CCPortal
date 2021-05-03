@@ -1,6 +1,6 @@
 .job-page-div {
     text-align: center;
-    margin-top: 20px;
+    margin-top: 40px;
 }
 
 h1 {
@@ -89,4 +89,12 @@ h4 {
 
 .description-text {
     text-align: left;
+}
+
+.logoutbtn {
+    cursor: pointer;
+}
+
+.logoutbtn:hover {
+  opacity: 0.6;
 }
